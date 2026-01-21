@@ -9,16 +9,16 @@ const AIChatWidget = () => {
     {
       role: "assistant",
       content:
-        "Olá! 👋 Sou o assistente virtual da FloorSure. Como posso ajudar você hoje?",
+        "Hi there! 👋 I'm FloorSure's virtual assistant. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");
 
   const quickResponses = [
-    "Quero um orçamento",
-    "Tipos de piso",
-    "Tempo de instalação",
-    "Área de atendimento",
+    "Get a quote",
+    "Flooring types",
+    "Installation time",
+    "Service area",
   ];
 
   const handleQuickResponse = (text: string) => {
@@ -34,19 +34,19 @@ const AIChatWidget = () => {
 
   const getAutoResponse = (text: string): string => {
     const lowerText = text.toLowerCase();
-    if (lowerText.includes("orçamento") || lowerText.includes("preço")) {
-      return "Para um orçamento personalizado, preencha nosso formulário de contato ou ligue para (862) 448-0588. Nossa avaliação é gratuita! 📋";
+    if (lowerText.includes("quote") || lowerText.includes("price") || lowerText.includes("cost")) {
+      return "For a personalized quote, fill out our contact form or call (862) 448-0588. Our evaluation is free! 📋";
     }
-    if (lowerText.includes("tipo") || lowerText.includes("piso")) {
-      return "Trabalhamos com: 🪵 Madeira Maciça, Madeira Engenheirada, Piso Vinílico (LVP), Piso Laminado e instalação de Escadas. Qual tipo te interessa?";
+    if (lowerText.includes("type") || lowerText.includes("floor") || lowerText.includes("option")) {
+      return "We work with: 🪵 Solid Hardwood, Engineered Wood, Vinyl Flooring (LVP), Laminate, and Stair Installation. Which type interests you?";
     }
-    if (lowerText.includes("tempo") || lowerText.includes("demora")) {
-      return "O tempo varia pelo tamanho e tipo de piso. Em média: sala padrão = 1-2 dias. Fornecemos estimativa precisa após avaliação gratuita! ⏱️";
+    if (lowerText.includes("time") || lowerText.includes("long") || lowerText.includes("days")) {
+      return "Time varies by size and flooring type. On average: standard room = 1-2 days. We provide a precise estimate after a free evaluation! ⏱️";
     }
-    if (lowerText.includes("área") || lowerText.includes("região") || lowerText.includes("atend")) {
-      return "Atendemos toda a Flórida Central e Norte: Orlando, Tampa, Jacksonville, Gainesville e região. Confirme sua localização conosco! 📍";
+    if (lowerText.includes("area") || lowerText.includes("location") || lowerText.includes("serve")) {
+      return "We serve all of Central and North Florida: Orlando, Tampa, Jacksonville, Gainesville, and surrounding areas. Confirm your location with us! 📍";
     }
-    return "Obrigado pela mensagem! Para informações detalhadas, recomendo falar diretamente com nossa equipe: (862) 448-0588 ou preencha o formulário de contato. 😊";
+    return "Thanks for your message! For detailed information, I recommend speaking directly with our team: (862) 448-0588 or fill out the contact form. 😊";
   };
 
   const handleSend = () => {
@@ -72,7 +72,7 @@ const AIChatWidget = () => {
         }`}
       >
         <MessageCircle className="w-7 h-7 text-accent-foreground" />
-        <span className="absolute top-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-background" />
+        <span className="absolute top-0 right-0 w-4 h-4 bg-emerald-500 rounded-full border-2 border-background" />
       </motion.button>
 
       {/* Chat Window */}
@@ -91,11 +91,11 @@ const AIChatWidget = () => {
               </div>
               <div className="flex-1">
                 <h4 className="font-semibold text-primary-foreground">
-                  Assistente FloorSure
+                  FloorSure Assistant
                 </h4>
                 <p className="text-xs text-primary-foreground/70 flex items-center gap-1">
-                  <span className="w-2 h-2 bg-green-400 rounded-full" />
-                  Online agora
+                  <span className="w-2 h-2 bg-emerald-400 rounded-full" />
+                  Online now
                 </p>
               </div>
               <button
@@ -150,7 +150,7 @@ const AIChatWidget = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
-                placeholder="Digite sua mensagem..."
+                placeholder="Type your message..."
                 className="flex-1 px-4 py-2 bg-muted rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
               />
               <Button

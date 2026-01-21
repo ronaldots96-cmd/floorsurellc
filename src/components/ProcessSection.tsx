@@ -6,30 +6,30 @@ const ProcessSection = () => {
     {
       icon: MessageSquare,
       number: "01",
-      title: "Consulta",
+      title: "Consultation",
       description:
-        "Entre em contato conosco para discutir suas necessidades e agendar uma visita técnica gratuita.",
+        "Contact us to discuss your needs and schedule a free on-site evaluation.",
     },
     {
       icon: FileText,
       number: "02",
-      title: "Orçamento",
+      title: "Quote",
       description:
-        "Avaliamos seu espaço e preparamos um orçamento detalhado, transparente e sem surpresas.",
+        "We assess your space and prepare a detailed, transparent quote with no surprises.",
     },
     {
       icon: HardHat,
       number: "03",
-      title: "Instalação",
+      title: "Installation",
       description:
-        "Nossa equipe profissional realiza a instalação com precisão, limpeza e no prazo acordado.",
+        "Our professional team performs the installation with precision, cleanliness, and on schedule.",
     },
     {
       icon: CheckCircle2,
       number: "04",
-      title: "Inspeção Final",
+      title: "Final Inspection",
       description:
-        "Fazemos uma inspeção completa juntos para garantir sua total satisfação com o resultado.",
+        "We conduct a complete inspection together to ensure your total satisfaction with the result.",
     },
   ];
 
@@ -44,13 +44,13 @@ const ProcessSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Nosso Processo
+            Our Process
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Como <span className="text-primary">Trabalhamos</span>
+            How We <span className="text-primary">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Um processo simples e transparente do início ao fim do seu projeto.
+            A simple and transparent process from start to finish.
           </p>
         </motion.div>
 

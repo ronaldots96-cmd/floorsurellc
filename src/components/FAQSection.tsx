@@ -7,34 +7,34 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "Quais tipos de pisos vocês instalam?",
+      question: "What types of flooring do you install?",
       answer:
-        "Instalamos todos os tipos principais de pisos: madeira maciça, madeira engenheirada, piso vinílico (LVP), piso laminado, e realizamos também instalação e reparo de escadas de madeira.",
+        "We install all major types of flooring: solid hardwood, engineered wood, vinyl flooring (LVP), laminate flooring, and we also do wood stair installation and repair.",
     },
     {
-      question: "Quanto tempo leva uma instalação típica?",
+      question: "How long does a typical installation take?",
       answer:
-        "O tempo varia de acordo com o tamanho do espaço e tipo de piso. Em média, uma sala de estar padrão pode ser concluída em 1-2 dias. Fornecemos uma estimativa precisa após a avaliação gratuita.",
+        "The time varies based on space size and flooring type. On average, a standard living room can be completed in 1-2 days. We provide a precise estimate after the free evaluation.",
     },
     {
-      question: "A avaliação e orçamento são gratuitos?",
+      question: "Is the evaluation and quote free?",
       answer:
-        "Sim! Oferecemos avaliação e orçamento totalmente gratuitos e sem compromisso. Entre em contato para agendar uma visita técnica.",
+        "Yes! We offer completely free evaluations and quotes with no obligation. Contact us to schedule a site visit.",
     },
     {
-      question: "Qual é a garantia dos serviços?",
+      question: "What is the warranty on your services?",
       answer:
-        "Todos os nossos serviços de instalação vêm com 1 ano de garantia completa. Isso cobre quaisquer defeitos de instalação e mão de obra.",
+        "All our installation services come with a full 1-year warranty. This covers any installation defects and workmanship issues.",
     },
     {
-      question: "Vocês atendem quais regiões da Flórida?",
+      question: "Which areas of Florida do you serve?",
       answer:
-        "Atendemos toda a Flórida Central e Norte, incluindo Orlando, Tampa, Jacksonville, Gainesville e cidades vizinhas. Entre em contato para confirmar atendimento na sua área.",
+        "We serve all of Central and North Florida, including Orlando, Tampa, Jacksonville, Gainesville, and surrounding cities. Contact us to confirm service in your area.",
     },
     {
-      question: "Preciso remover os móveis antes da instalação?",
+      question: "Do I need to move the furniture before installation?",
       answer:
-        "Recomendamos que móveis menores sejam removidos. Para móveis maiores, nossa equipe pode auxiliar na movimentação como parte do serviço, mediante acordo prévio.",
+        "We recommend that smaller furniture be removed beforehand. For larger furniture, our team can assist with moving as part of the service, by prior arrangement.",
     },
   ];
 
@@ -52,7 +52,7 @@ const FAQSection = () => {
               FAQ
             </span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-8">
-              Perguntas <span className="text-primary">Frequentes</span>
+              Frequently Asked <span className="text-primary">Questions</span>
             </h2>
 
             <div className="space-y-4">
@@ -111,25 +111,25 @@ const FAQSection = () => {
                 <MessageCircle className="w-10 h-10 text-accent-foreground" />
               </div>
               <h3 className="font-display text-2xl font-bold text-primary-foreground mb-4">
-                Precisa de Ajuda?
+                Need Help?
               </h3>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                Nosso assistente virtual está disponível 24/7 para responder suas dúvidas 
-                sobre pisos, orçamentos e agendamentos.
+                Our virtual assistant is available 24/7 to answer your questions 
+                about flooring, quotes, and scheduling.
               </p>
               <p className="text-sm text-primary-foreground/60 mb-6">
-                Clique no ícone de chat no canto inferior direito para iniciar uma conversa.
+                Click the chat icon in the bottom right corner to start a conversation.
               </p>
               <div className="flex items-center justify-center gap-2 text-accent font-semibold">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                Assistente Online
+                Assistant Online
               </div>
             </div>
 
             {/* Quick Contact */}
             <div className="mt-6 p-6 bg-card rounded-xl border border-border">
               <h4 className="font-display text-lg font-bold text-foreground mb-4">
-                Ou fale diretamente conosco:
+                Or contact us directly:
               </h4>
               <a
                 href="tel:+18624480588"

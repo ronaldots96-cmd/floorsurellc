@@ -6,12 +6,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { href: "#home", label: "Início" },
-    { href: "#about", label: "Sobre Nós" },
-    { href: "#services", label: "Serviços" },
-    { href: "#gallery", label: "Galeria" },
-    { href: "#testimonials", label: "Depoimentos" },
-    { href: "#contact", label: "Contato" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About Us" },
+    { href: "#services", label: "Services" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -27,53 +27,53 @@ const Footer = () => {
               viewport={{ once: true }}
             >
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                Contato
+                Contact
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-warm-white mt-2 mb-4">
-                Agende sua <span className="text-accent">Avaliação Gratuita</span>
+                Schedule Your <span className="text-accent">Free Estimate</span>
               </h2>
               <p className="text-warm-white/70 mb-8">
-                Preencha o formulário e nossa equipe entrará em contato em até 24 horas.
+                Fill out the form and our team will contact you within 24 hours.
               </p>
 
               <form className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input
                     type="text"
-                    placeholder="Nome Completo *"
+                    placeholder="Full Name *"
                     className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white placeholder:text-warm-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50"
                     required
                   />
                   <input
                     type="tel"
-                    placeholder="Telefone *"
+                    placeholder="Phone Number *"
                     className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white placeholder:text-warm-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50"
                     required
                   />
                 </div>
                 <input
                   type="email"
-                  placeholder="E-mail *"
+                  placeholder="Email Address *"
                   className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white placeholder:text-warm-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50"
                   required
                 />
                 <div className="grid sm:grid-cols-2 gap-4">
                   <select className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white/70 focus:outline-none focus:ring-2 focus:ring-accent/50">
-                    <option value="">Tipo de Serviço</option>
-                    <option value="hardwood">Piso de Madeira</option>
-                    <option value="vinyl">Piso Vinílico</option>
-                    <option value="laminate">Piso Laminado</option>
-                    <option value="stairs">Escadas</option>
-                    <option value="repair">Reparos</option>
+                    <option value="">Type of Service</option>
+                    <option value="hardwood">Hardwood Flooring</option>
+                    <option value="vinyl">Vinyl Flooring</option>
+                    <option value="laminate">Laminate Flooring</option>
+                    <option value="stairs">Stairs</option>
+                    <option value="repair">Repairs</option>
                   </select>
                   <input
                     type="text"
-                    placeholder="Cidade / Região"
+                    placeholder="City / Area"
                     className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white placeholder:text-warm-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50"
                   />
                 </div>
                 <textarea
-                  placeholder="Descreva seu projeto..."
+                  placeholder="Describe your project..."
                   rows={4}
                   className="w-full px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-lg text-warm-white placeholder:text-warm-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50 resize-none"
                 />
@@ -81,7 +81,7 @@ const Footer = () => {
                   type="submit"
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg py-6"
                 >
-                  Solicitar Avaliação Gratuita
+                  Request Free Estimate
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </form>
@@ -106,8 +106,8 @@ const Footer = () => {
               </div>
 
               <p className="text-warm-white/70 mb-8 leading-relaxed">
-                Especialistas em instalação e reparo de pisos na Flórida Central e Norte. 
-                Qualidade incomparável com 1 ano de garantia em todos os serviços.
+                Flooring installation and repair specialists in Central and North Florida. 
+                Unmatched quality with a 1-year warranty on all services.
               </p>
 
               {/* Contact Details */}
@@ -120,7 +120,7 @@ const Footer = () => {
                     <Phone className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-warm-white/60">Telefone</p>
+                    <p className="text-sm text-warm-white/60">Phone</p>
                     <p className="font-semibold">(862) 448-0588</p>
                   </div>
                 </a>
@@ -133,7 +133,7 @@ const Footer = () => {
                     <Mail className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-warm-white/60">E-mail</p>
+                    <p className="text-sm text-warm-white/60">Email</p>
                     <p className="font-semibold">floorsurellc@outlook.com</p>
                   </div>
                 </a>
@@ -143,15 +143,15 @@ const Footer = () => {
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-sm text-warm-white/60">Área de Atendimento</p>
-                    <p className="font-semibold">Flórida Central e Norte</p>
+                    <p className="text-sm text-warm-white/60">Service Area</p>
+                    <p className="font-semibold">Central & North Florida</p>
                   </div>
                 </div>
               </div>
 
               {/* Quick Links */}
               <div>
-                <h4 className="text-warm-white font-semibold mb-4">Links Rápidos</h4>
+                <h4 className="text-warm-white font-semibold mb-4">Quick Links</h4>
                 <div className="grid grid-cols-2 gap-2">
                   {navLinks.map((link) => (
                     <a
@@ -173,14 +173,14 @@ const Footer = () => {
       <div className="border-t border-warm-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-warm-white/50 text-sm text-center md:text-left">
-            © {currentYear} FloorSure Flooring LLC. Todos os direitos reservados.
+            © {currentYear} FloorSure Flooring LLC. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-warm-white/50 hover:text-accent text-sm transition-colors">
-              Política de Privacidade
+              Privacy Policy
             </a>
             <a href="#" className="text-warm-white/50 hover:text-accent text-sm transition-colors">
-              Termos de Uso
+              Terms of Service
             </a>
           </div>
         </div>
