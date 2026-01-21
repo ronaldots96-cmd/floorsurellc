@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -16,13 +16,13 @@ const GallerySection = () => {
     {
       before: before1,
       after: after1,
-      title: "Restauração de Piso de Madeira",
+      title: "Hardwood Floor Restoration",
       location: "Orlando, FL",
     },
     {
       before: before2,
       after: after2,
-      title: "Substituição de Carpete por Vinílico",
+      title: "Carpet to Vinyl Replacement",
       location: "Tampa, FL",
     },
   ];
@@ -48,13 +48,13 @@ const GallerySection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Galeria
+            Gallery
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Antes & <span className="text-primary">Depois</span>
+            Before & <span className="text-primary">After</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Veja a transformação que nosso trabalho pode fazer em sua casa.
+            See the transformation our work can make in your home.
           </p>
         </motion.div>
 
@@ -81,7 +81,7 @@ const GallerySection = () => {
               {/* After Image (Bottom Layer) */}
               <img
                 src={projects[currentIndex].after}
-                alt="Depois"
+                alt="After"
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
@@ -92,7 +92,7 @@ const GallerySection = () => {
               >
                 <img
                   src={projects[currentIndex].before}
-                  alt="Antes"
+                  alt="Before"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -120,10 +120,10 @@ const GallerySection = () => {
 
               {/* Labels */}
               <div className="absolute bottom-4 left-4 bg-charcoal/80 backdrop-blur-sm px-3 py-1 rounded-md text-warm-white text-sm font-medium">
-                Antes
+                Before
               </div>
               <div className="absolute bottom-4 right-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-md text-accent-foreground text-sm font-medium">
-                Depois
+                After
               </div>
             </div>
 

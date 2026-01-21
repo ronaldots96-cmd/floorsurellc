@@ -10,31 +10,31 @@ const ServicesSection = () => {
   const services = [
     {
       image: serviceHardwood,
-      title: "Piso de Madeira",
+      title: "Hardwood Flooring",
       description:
-        "Instalação profissional de pisos de madeira maciça e engenheirada. Elegância atemporal para sua casa.",
-      features: ["Madeira Maciça", "Madeira Engenheirada", "Restauração"],
+        "Professional installation of solid and engineered hardwood floors. Timeless elegance for your home.",
+      features: ["Solid Hardwood", "Engineered Wood", "Refinishing"],
     },
     {
       image: serviceVinyl,
-      title: "Piso Vinílico",
+      title: "Vinyl Flooring",
       description:
-        "Pisos vinílicos de alta qualidade, resistentes à água e fáceis de manter. Perfeitos para áreas úmidas.",
-      features: ["LVP (Luxury Vinyl Plank)", "Resistente à Água", "Fácil Instalação"],
+        "High-quality vinyl flooring, water-resistant and easy to maintain. Perfect for wet areas.",
+      features: ["LVP (Luxury Vinyl Plank)", "Waterproof", "Easy Installation"],
     },
     {
       image: serviceLaminate,
-      title: "Piso Laminado",
+      title: "Laminate Flooring",
       description:
-        "Opção econômica que não compromete a beleza. Variedade de estilos e padrões disponíveis.",
-      features: ["Custo-Benefício", "Variedade de Estilos", "Instalação Rápida"],
+        "Affordable option that doesn't compromise on beauty. Wide variety of styles and patterns available.",
+      features: ["Cost-Effective", "Variety of Styles", "Quick Installation"],
     },
     {
       image: serviceStairs,
-      title: "Escadas & Reparos",
+      title: "Stairs & Repairs",
       description:
-        "Instalação e reparo de escadas de madeira. Reparos especializados para todos os tipos de pisos.",
-      features: ["Escadas de Madeira", "Reparos Gerais", "Restauração"],
+        "Wood stair installation and repair. Specialized repairs for all types of flooring.",
+      features: ["Wood Stairs", "General Repairs", "Restoration"],
     },
   ];
 
@@ -49,14 +49,14 @@ const ServicesSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Nossos Serviços
+            Our Services
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Soluções Completas em <span className="text-primary">Pisos</span>
+            Complete <span className="text-primary">Flooring</span> Solutions
           </h2>
           <p className="text-muted-foreground text-lg">
-            Oferecemos uma ampla gama de serviços de instalação e reparo de pisos, 
-            sempre com materiais de primeira qualidade.
+            We offer a wide range of flooring installation and repair services, 
+            always with top-quality materials.
           </p>
         </motion.div>
 
@@ -101,7 +101,7 @@ const ServicesSection = () => {
                   variant="ghost"
                   className="text-primary font-semibold hover:text-accent group/btn p-0"
                 >
-                  Saiba Mais
+                  Learn More
                   <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </div>
@@ -122,7 +122,7 @@ const ServicesSection = () => {
             className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg px-8"
           >
             <a href="#contact">
-              Solicite seu Orçamento
+              Request Your Quote
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </Button>

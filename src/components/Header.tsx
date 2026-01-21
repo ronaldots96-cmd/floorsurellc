@@ -16,12 +16,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Início" },
-    { href: "#about", label: "Sobre Nós" },
-    { href: "#services", label: "Serviços" },
-    { href: "#gallery", label: "Galeria" },
-    { href: "#testimonials", label: "Depoimentos" },
-    { href: "#contact", label: "Contato" },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About Us" },
+    { href: "#services", label: "Services" },
+    { href: "#gallery", label: "Gallery" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
@@ -72,7 +72,7 @@ const Header = () => {
             asChild
             className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent font-semibold"
           >
-            <a href="#contact">Agende sua Avaliação</a>
+            <a href="#contact">Schedule Estimate</a>
           </Button>
 
           {/* Mobile Menu Button */}
@@ -116,7 +116,7 @@ const Header = () => {
                 asChild
                 className="mt-4 bg-accent text-accent-foreground hover:bg-accent/90 w-full"
               >
-                <a href="#contact">Agende sua Avaliação</a>
+                <a href="#contact">Schedule Estimate</a>
               </Button>
             </nav>
           </motion.div>

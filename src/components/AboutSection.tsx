@@ -3,10 +3,10 @@ import { Shield, Award, Users, Clock } from "lucide-react";
 
 const AboutSection = () => {
   const stats = [
-    { icon: Clock, value: "10+", label: "Anos de Experiência" },
-    { icon: Users, value: "500+", label: "Clientes Satisfeitos" },
-    { icon: Award, value: "1 Ano", label: "Garantia" },
-    { icon: Shield, value: "100%", label: "Qualidade Garantida" },
+    { icon: Clock, value: "10+", label: "Years of Experience" },
+    { icon: Users, value: "500+", label: "Happy Customers" },
+    { icon: Award, value: "1 Year", label: "Warranty" },
+    { icon: Shield, value: "100%", label: "Quality Guaranteed" },
   ];
 
   return (
@@ -21,27 +21,27 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
           >
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-              Sobre Nós
+              About Us
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-6">
-              Transformando Espaços com{" "}
-              <span className="text-primary">Excelência</span> e Dedicação
+              Transforming Spaces with{" "}
+              <span className="text-primary">Excellence</span> and Dedication
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              A <strong className="text-foreground">FloorSure Flooring LLC</strong> nasceu da paixão por 
-              transformar ambientes através de pisos de alta qualidade. Com sede na Flórida Central, 
-              atendemos toda a região com profissionalismo e comprometimento.
+              <strong className="text-foreground">FloorSure Flooring LLC</strong> was born from a 
+              passion for transforming environments through high-quality flooring. Based in Central 
+              Florida, we serve the entire region with professionalism and commitment.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Nossa missão é oferecer soluções de pisos que combinam beleza, durabilidade e 
-              custo-benefício. Cada projeto é tratado com cuidado personalizado, garantindo 
-              resultados que superam expectativas.
+              Our mission is to provide flooring solutions that combine beauty, durability, and 
+              value. Every project is treated with personalized care, ensuring results that 
+              exceed expectations.
             </p>
 
             <div className="bg-primary/10 p-6 rounded-xl border-l-4 border-accent">
               <p className="text-foreground font-medium text-lg">
-                "Oferecemos <span className="text-accent font-bold">1 ano de garantia</span> em 
-                todos os nossos serviços de instalação — nossa promessa de qualidade para você."
+                "We offer a <span className="text-accent font-bold">1-year warranty</span> on 
+                all our installation services — our promise of quality to you."
               </p>
             </div>
           </motion.div>

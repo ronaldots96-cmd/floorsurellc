@@ -35,17 +35,17 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 bg-accent/20 text-accent rounded-full text-sm font-medium mb-6"
             >
-              ✨ Instalação Profissional com 1 Ano de Garantia
+              ✨ Professional Installation with 1-Year Warranty
             </motion.span>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight mb-6">
               FloorSure Flooring LLC:{" "}
-              <span className="text-accent">A Escolha Certa</span> para Seus Pisos e Escadas
+              <span className="text-accent">The Right Choice</span> for Your Floors & Stairs
             </h1>
 
             <p className="text-lg md:text-xl text-warm-white/80 mb-8 max-w-2xl">
-              Qualidade Incomparável e Atendimento Personalizado na Flórida Central e Norte. 
-              Transforme seu espaço com acabamentos que duram.
+              Unmatched Quality and Personalized Service in Central & North Florida. 
+              Transform your space with finishes that last.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -55,7 +55,7 @@ const HeroSection = () => {
                 className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg px-8"
               >
                 <a href="#contact">
-                  Obtenha um Orçamento Gratuito
+                  Get a Free Quote
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
               </Button>
@@ -65,16 +65,16 @@ const HeroSection = () => {
                 size="lg"
                 className="border-warm-white/30 text-warm-white hover:bg-warm-white/10 text-lg px-8"
               >
-                <a href="#services">Nossos Serviços</a>
+                <a href="#services">Our Services</a>
               </Button>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
               {[
-                "Mais de 500 Projetos",
-                "Garantia de 1 Ano",
-                "Orçamento Grátis",
+                "500+ Projects Completed",
+                "1-Year Warranty",
+                "Free Estimates",
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -99,43 +99,43 @@ const HeroSection = () => {
           >
             <div className="bg-background/95 backdrop-blur-sm p-8 rounded-2xl shadow-lg">
               <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                Solicite seu Orçamento
+                Request Your Quote
               </h3>
               <p className="text-muted-foreground mb-6">
-                Preencha o formulário e entraremos em contato em até 24 horas.
+                Fill out the form and we'll contact you within 24 hours.
               </p>
               <form className="space-y-4">
                 <input
                   type="text"
-                  placeholder="Seu Nome"
+                  placeholder="Your Name"
                   className="input-styled"
                   required
                 />
                 <input
                   type="tel"
-                  placeholder="Telefone"
+                  placeholder="Phone Number"
                   className="input-styled"
                   required
                 />
                 <input
                   type="email"
-                  placeholder="E-mail"
+                  placeholder="Email Address"
                   className="input-styled"
                   required
                 />
                 <select className="input-styled text-muted-foreground">
-                  <option value="">Tipo de Serviço</option>
-                  <option value="hardwood">Piso de Madeira</option>
-                  <option value="vinyl">Piso Vinílico</option>
-                  <option value="laminate">Piso Laminado</option>
-                  <option value="stairs">Escadas</option>
-                  <option value="repair">Reparos</option>
+                  <option value="">Type of Service</option>
+                  <option value="hardwood">Hardwood Flooring</option>
+                  <option value="vinyl">Vinyl Flooring</option>
+                  <option value="laminate">Laminate Flooring</option>
+                  <option value="stairs">Stairs</option>
+                  <option value="repair">Repairs</option>
                 </select>
                 <Button
                   type="submit"
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg py-6"
                 >
-                  Agendar Avaliação Gratuita
+                  Schedule Free Estimate
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </form>

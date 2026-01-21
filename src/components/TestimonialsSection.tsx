@@ -11,28 +11,28 @@ const TestimonialsSection = () => {
       name: "Maria Santos",
       location: "Orlando, FL",
       rating: 5,
-      text: "Excelente trabalho! A equipe foi super profissional e o resultado ficou incrível. Meu piso de madeira ficou perfeito. Recomendo a todos!",
+      text: "Excellent work! The team was super professional and the result was amazing. My hardwood floor turned out perfect. Highly recommend!",
       source: "Google",
     },
     {
-      name: "João Silva",
+      name: "John Smith",
       location: "Tampa, FL",
       rating: 5,
-      text: "Serviço de primeira qualidade! Instalaram o piso vinílico no meu banheiro e cozinha. Trabalho impecável e dentro do prazo prometido.",
+      text: "Top-quality service! They installed vinyl flooring in my bathroom and kitchen. Impeccable work and finished on time as promised.",
       source: "Facebook",
     },
     {
       name: "Ana Costa",
       location: "Jacksonville, FL",
       rating: 5,
-      text: "Adorei o atendimento desde o primeiro contato. Preço justo, material de qualidade e instalação perfeita. A garantia de 1 ano me deu muita confiança.",
+      text: "Loved the service from the first contact. Fair price, quality materials, and perfect installation. The 1-year warranty gave me great confidence.",
       source: "Yelp",
     },
     {
       name: "Carlos Oliveira",
       location: "Gainesville, FL",
       rating: 5,
-      text: "Transformaram completamente a escada da minha casa. Ficou linda! Profissionais sérios e comprometidos com a qualidade.",
+      text: "They completely transformed my home's staircase. It looks beautiful! Serious professionals committed to quality.",
       source: "Google",
     },
   ];
@@ -61,13 +61,13 @@ const TestimonialsSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Depoimentos
+            Testimonials
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            O Que Nossos <span className="text-primary">Clientes</span> Dizem
+            What Our <span className="text-primary">Customers</span> Say
           </h2>
           <p className="text-muted-foreground text-lg">
-            A satisfação dos nossos clientes é nosso maior orgulho.
+            Our customers' satisfaction is our greatest pride.
           </p>
         </motion.div>
 

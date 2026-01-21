@@ -5,33 +5,33 @@ const WhyChooseUsSection = () => {
   const reasons = [
     {
       icon: Wrench,
-      title: "Instalação Profissional",
+      title: "Professional Installation",
       description:
-        "Equipe treinada e experiente para garantir instalações perfeitas em cada projeto.",
+        "Trained and experienced team to ensure perfect installations on every project.",
     },
     {
       icon: Smile,
-      title: "Satisfação do Cliente",
+      title: "Customer Satisfaction",
       description:
-        "Nosso compromisso é sua satisfação. Trabalhamos até você estar 100% feliz.",
+        "Our commitment is your satisfaction. We work until you're 100% happy.",
     },
     {
       icon: Palette,
-      title: "Ampla Gama de Opções",
+      title: "Wide Range of Options",
       description:
-        "Variedade de materiais, cores e estilos para combinar com seu gosto e orçamento.",
+        "Variety of materials, colors, and styles to match your taste and budget.",
     },
     {
       icon: DollarSign,
-      title: "Preços Competitivos",
+      title: "Competitive Pricing",
       description:
-        "Oferecemos o melhor custo-benefício do mercado sem comprometer a qualidade.",
+        "We offer the best value in the market without compromising quality.",
     },
     {
       icon: ShieldCheck,
-      title: "Garantia de 1 Ano",
+      title: "1-Year Warranty",
       description:
-        "Todos os nossos serviços incluem 1 ano de garantia. Sua segurança é nossa prioridade.",
+        "All our services include a 1-year warranty. Your peace of mind is our priority.",
     },
   ];
 
@@ -46,13 +46,13 @@ const WhyChooseUsSection = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Por Que Nos Escolher
+            Why Choose Us
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-2 mb-4">
-            Excelência em Cada <span className="text-accent">Detalhe</span>
+            Excellence in Every <span className="text-accent">Detail</span>
           </h2>
           <p className="text-primary-foreground/80 text-lg">
-            Descubra por que somos a escolha preferida para instalação de pisos na Flórida.
+            Discover why we're the preferred choice for flooring installation in Florida.
           </p>
         </motion.div>
 
