@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -98,11 +97,12 @@ const Footer = () => {
             >
               {/* Logo */}
               <div className="mb-8">
-                <img 
-                  src={logo} 
-                  alt="FloorSure Flooring LLC" 
-                  className="h-16 w-auto"
-                />
+                <h3 className="font-display text-3xl font-bold text-warm-white">
+                  FloorSure
+                </h3>
+                <span className="text-sm tracking-widest text-warm-white/60 uppercase">
+                  Flooring LLC
+                </span>
               </div>
 
               <p className="text-warm-white/70 mb-8 leading-relaxed">
