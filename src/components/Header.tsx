@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,15 +37,12 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <span className="font-display text-2xl md:text-3xl font-bold text-primary">
-              FloorSure
-            </span>
-            <span className="text-xs tracking-widest text-muted-foreground uppercase">
-              Flooring LLC
-            </span>
-          </div>
+        <a href="#home" className="flex items-center">
+          <img 
+            src={logo} 
+            alt="FloorSure Flooring LLC" 
+            className="h-12 md:h-14 w-auto"
+          />
         </a>
 
         {/* Desktop Navigation */}
