@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-flooring.jpg";
+// Importando o vídeo (coloque o arquivo na pasta src/assets/)
+import heroVideo from "@/assets/hero-video.mp4";
 
 const HeroSection = () => {
   return (
@@ -9,13 +11,28 @@ const HeroSection = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Media (Híbrido: Imagem no Desktop, Vídeo no Mobile) */}
+      <div className="absolute inset-0 z-0 bg-charcoal">
+        {/* DESKTOP: Mostra a Imagem, Esconde o Vídeo (md:block hidden) */}
         <img
           src={heroImage}
           alt="Beautiful hardwood flooring installation"
-          className="w-full h-full object-cover"
+          className="hidden md:block w-full h-full object-cover"
         />
+
+        {/* MOBILE: Mostra o Vídeo, Esconde a Imagem (block md:hidden) */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={heroImage}
+          className="block md:hidden w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        
+        {/* Camada escura por cima para os textos ficarem legíveis */}
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/50" />
       </div>
 
