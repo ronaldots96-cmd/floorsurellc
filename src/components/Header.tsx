@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
@@ -35,16 +36,15 @@ const Header = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="flex flex-col">
-            <span className="font-display text-2xl md:text-3xl font-bold text-primary">
-              FloorSure
-            </span>
-            <span className="text-xs tracking-widest text-muted-foreground uppercase">
-              Flooring LLC
-            </span>
-          </div>
+        
+        {/* Logo Atualizada */}
+        <a href="#home" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+          <img 
+            src="/logo-floorsure.png" 
+            alt="FloorSure LLC Logo" 
+            className="h-12 md:h-14 w-auto object-contain mix-blend-multiply" 
+            /* Nota: a classe mix-blend-multiply ajuda se a logo tiver fundo branco e o header for ligeiramente cinza. Se der problema, basta removê-la. */
+          />
         </a>
 
         {/* Desktop Navigation */}
