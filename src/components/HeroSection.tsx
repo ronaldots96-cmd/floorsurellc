@@ -42,14 +42,11 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
             className="text-center lg:text-left"
           >
-            {/* BALÃO REMOVIDO DAQUI */}
-
             {/* HEADLINE ATUALIZADA */}
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              When it comes to flooring, you can be <span className="text-accent">FloorSure</span>.
+              When it comes to <span className="text-accent">floor</span>, you can be <span className="text-accent">Sure</span>.
             </h1>
 
-            {/* SUBHEADLINE ATUALIZADA */}
             <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto lg:mx-0">
               Unmatched quality and professional installation in Central & North Florida. 
               Transform your space with finishes that last a lifetime.
@@ -67,7 +64,7 @@ const HeroSection = () => {
                 </a>
               </Button>
               
-              {/* BOTÃO SECUNDÁRIO ATUALIZADO (Glassmorphism) */}
+              {/* BOTÃO SECUNDÁRIO (Glassmorphism) */}
               <Button
                 asChild
                 variant="outline"
@@ -134,7 +131,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-      {/* INDICADOR DE SCROLL REMOVIDO DAQUI */}
     </section>
   );
 };
