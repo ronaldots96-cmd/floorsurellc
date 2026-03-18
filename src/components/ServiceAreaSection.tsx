@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { MapPin, CheckCircle2 } from "lucide-react";
+// IMPORTA A IMAGEM DO MAPA
+import serviceMap from "@/assets/florida-service-map.png"; 
 
 const ServiceAreaSection = () => {
-  // Lista de cidades com base na área de atuação de Central Florida (PDF)
   const serviceAreas = [
     "Orlando",
     "Lakeland",
@@ -30,15 +31,15 @@ const ServiceAreaSection = () => {
               <MapPin className="w-5 h-5" /> Locally Owned & Operated
             </span>
             
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 text-center lg:text-left">
-              Serving <span className="text-primary">Central Florida</span> with Pride
+            {/* TÍTULO CORRIGIDO: Destaque em bloco (fundo com a cor de destaque e texto branco/claro) para garantir contraste máximo */}
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 text-center lg:text-left leading-tight">
+              Serving <span className="inline-block bg-accent text-white px-3 py-1 rounded-xl shadow-md mt-2 md:mt-0">Central Florida</span> with Pride
             </h2>
             
             <p className="text-slate-600 text-lg mb-8 text-center lg:text-left">
               We bring our showroom to you! Our specialized teams are ready to transform homes and businesses across the region. We guarantee timely arrivals, flawless execution, and total respect for your property.
             </p>
 
-            {/* Scannable Cities List */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {serviceAreas.map((city, index) => (
                 <div key={index} className="flex items-center gap-3">
@@ -49,26 +50,32 @@ const ServiceAreaSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Map Iframe */}
+          {/* Right Side - Image Map */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-slate-100 group"
+            className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50 group"
           >
-            {/* O iframe foi ajustado para preencher 100% do container pai */}
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617386.2860808433!2d-83.804601!3d27.698638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25800f16a37551a3%3A0x89aa48da2224cd51!2sFloorSure%20Flooring%20LLC!5e0!3m2!1spt-PT!2sbr!4v1773794875640!5m2!1spt-PT!2sbr" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen={true} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale-[20%] transition-all duration-500 group-hover:grayscale-0"
-              title="FloorSure LLC Service Area Map"
-            ></iframe>
+            {/* Container da Imagem */}
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <img 
+                src={serviceMap} 
+                alt="Map showing FloorSure LLC service areas in Central Florida" 
+                className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            {/* Selo Flutuante de Status (Estilo "Live") */}
+            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-slate-100 flex items-center gap-3">
+              {/* Ponto Pulsante */}
+              <div className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+              </div>
+              <span className="text-sm font-bold text-slate-800 uppercase tracking-wider">Service Area</span>
+            </div>
           </motion.div>
 
         </div>
