@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { MessageSquare, FileText, HardHat, CheckCircle2 } from "lucide-react";
+// Opcional: Se quiser usar uma foto real como parallax, importe-a aqui. 
+// Caso não tenha agora, a secção já usa um padrão de bolinhas incrível (dot grid).
+// import processBg from "@/assets/process-bg.jpg"; 
 
 const ProcessSection = () => {
   const steps = [
@@ -7,88 +10,106 @@ const ProcessSection = () => {
       icon: MessageSquare,
       number: "01",
       title: "Free Consultation",
-      description:
-        "We measure your space and carefully listen to your vision and needs for the project.",
+      description: "We measure your space and carefully listen to your vision and needs for the project.",
     },
     {
       icon: FileText,
       number: "02",
       title: "No-Surprise Quote",
-      description:
-        "Transparent pricing with absolutely no hidden fees. You know exactly what you'll pay.",
+      description: "Transparent pricing with absolutely no hidden fees. You know exactly what you'll pay.",
     },
     {
       icon: HardHat,
       number: "03",
       title: "Expert Installation",
-      description:
-        "Clean, professional execution by our specialized local crew respecting your home.",
+      description: "Clean, professional execution by our specialized local crew respecting your home.",
     },
     {
       icon: CheckCircle2,
       number: "04",
       title: "Final Walkthrough",
-      description:
-        "We review the completed work together. 100% satisfaction guaranteed before we leave.",
+      description: "We review the completed work together. 100% satisfaction guaranteed before we leave.",
     },
   ];
 
   return (
-    <section className="section-padding bg-secondary">
-      <div className="container-custom">
-        {/* Header */}
+    <section className="relative section-padding overflow-hidden">
+      {/* BACKGROUND PARALLAX & TEXTURA */}
+      <div className="absolute inset-0 z-0 bg-slate-900">
+        {/* Descomente a linha abaixo e o import se quiser usar uma foto de fundo */}
+        {/* <div className="absolute inset-0 bg-[url('@/assets/process-bg.jpg')] bg-cover bg-fixed bg-center opacity-20 mix-blend-overlay" /> */}
+        
+        {/* Padrão de pontos (Dot Grid) - Estética muito usada em Marketing/Tech */}
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900" />
+      </div>
+
+      <div className="relative z-10 container-custom">
+        {/* Header - Texto atualizado para branco devido ao fundo escuro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider bg-accent/10 px-4 py-1.5 rounded-full inline-block mb-4">
             Our Process
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            How We <span className="text-primary">Work</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2 mb-4">
+            How We <span className="text-accent">Work</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-slate-300 text-lg">
             A simple and transparent process from start to finish.
           </p>
         </motion.div>
 
-        {/* Steps */}
-        <div className="relative">
-          {/* Connection Line (Desktop) */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/20 via-accent to-accent/20" />
+        {/* CONNECT THE DOTS LAYOUT */}
+        <div className="relative max-w-5xl mx-auto">
+          
+          {/* LINHA CONECTORA (Desktop) - Fica invisível no mobile */}
+          <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
+          
+          {/* LINHA CONECTORA (Mobile) - Fica invisível no Desktop */}
+          <div className="lg:hidden absolute top-[4rem] bottom-[4rem] left-[2.25rem] w-0.5 bg-gradient-to-b from-accent/10 via-accent/50 to-accent/10 z-0" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* GRID DOS PASSOS */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6 relative z-10">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative text-center"
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="relative flex flex-row lg:flex-col items-start lg:items-center group"
               >
-                {/* Number Circle */}
-                <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-background shadow-lg mb-6 z-10">
-                  <span className="font-display text-2xl font-bold text-accent">
-                    {step.number}
-                  </span>
-                  <div className="absolute -inset-1 rounded-full border-2 border-accent/30" />
+                {/* O CONJUNTO DO ÍCONE (A BOLINHA DA CONEXÃO) */}
+                <div className="relative shrink-0 flex items-center justify-center lg:mb-8 ml-2 lg:ml-0 z-20">
+                  {/* Fundo do número (Fica por trás e cresce no hover) */}
+                  <div className="absolute inset-0 bg-accent/10 rounded-full scale-110 transition-transform duration-500 group-hover:scale-150" />
+                  
+                  {/* Círculo Principal com o Número */}
+                  <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center shadow-xl transition-colors duration-300 group-hover:border-accent">
+                    <span className="font-display text-xl lg:text-2xl font-bold text-slate-300 group-hover:text-white transition-colors">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  {/* Ícone pequeno na bolinha (O "Badge") */}
+                  <div className="absolute -top-1 -right-1 lg:top-0 lg:right-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
+                    <step.icon className="w-4 h-4 text-accent-foreground" />
+                  </div>
                 </div>
 
-                {/* Icon */}
-                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-accent">
-                  <step.icon className="w-5 h-5 text-accent-foreground" />
+                {/* TEXTO DO PASSO */}
+                <div className="ml-6 lg:ml-0 lg:text-center pt-2 lg:pt-0">
+                  <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Content */}
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
-                  {step.description}
-                </p>
               </motion.div>
             ))}
           </div>
