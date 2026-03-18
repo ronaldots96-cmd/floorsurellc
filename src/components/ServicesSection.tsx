@@ -31,14 +31,21 @@ const ServicesSection = () => {
       ]
     },
     {
-      // 2. CAPA PARA VINYL (Substitua quando tiver a imagem real)
+      // 2. CAPA PARA VINYL ATUALIZADA
       image: "/portfolio/vinyl/vinyl-1.jpg", 
       title: "Vinyl (LVP)",
       description:
         "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
       features: ["LVP (Luxury Vinyl Plank)", "Waterproof", "Easy Installation"],
       portfolio: [
-        { type: "image", src: "/placeholder.svg", alt: "Vinyl project placeholder" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-1.jpg", alt: "Vinyl project 1" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-2.jpg", alt: "Vinyl project 2" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-3.jpg", alt: "Vinyl project 3" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-4.jpg", alt: "Vinyl project 4" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-5.jpg", alt: "Vinyl project 5" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-6.jpg", alt: "Vinyl project 6" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-7.jpg", alt: "Vinyl project 7" },
+        { type: "image", src: "/portfolio/vinyl/vinyl-8.jpg", alt: "Vinyl project 8" },
       ]
     },
     {
