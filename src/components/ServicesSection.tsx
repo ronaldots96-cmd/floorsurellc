@@ -136,8 +136,9 @@ const ServicesSection = () => {
                       </Button>
                     </DialogTrigger>
                     
-                    <DialogContent className="max-w-4xl bg-white border-slate-200">
-                      <DialogHeader>
+                    {/* Ajuste no DialogContent para garantir scroll vertical limpo */}
+                    <DialogContent className="max-w-4xl bg-white border-slate-200 p-0 overflow-hidden flex flex-col h-[90vh] md:h-auto md:max-h-[90vh]">
+                      <DialogHeader className="p-6 border-b border-slate-100">
                         <DialogTitle className="font-display text-2xl text-slate-900">
                           {service.title} Projects
                         </DialogTitle>
@@ -146,36 +147,40 @@ const ServicesSection = () => {
                         </DialogDescription>
                       </DialogHeader>
                       
-                      {/* ==== MASONRY LAYOUT ATUALIZADO AQUI ==== */}
-                      <div className="columns-1 sm:columns-2 gap-6 mt-6 max-h-[75vh] overflow-y-auto p-2 pr-4">
-                        {service.portfolio.map((item, i) => (
-                          <div 
-                            key={i} 
-                            // O break-inside-avoid impede que a imagem seja "cortada" ao meio entre as colunas
-                            className="break-inside-avoid relative rounded-xl overflow-hidden bg-slate-100 group/media mb-6 shadow-sm border border-slate-100"
-                          >
-                            {item.type === "video" ? (
-                              <>
-                                <video
-                                  controls
-                                  preload="none"
-                                  className="w-full h-auto aspect-video object-cover"
-                                >
-                                  <source src={item.src} type="video/mp4" />
-                                </video>
-                                <PlayCircle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-white/80 pointer-events-none group-hover/media:opacity-0 transition-opacity" />
-                              </>
-                            ) : (
-                              <img
-                                src={item.src}
-                                alt={item.alt}
-                                loading="lazy"
-                                // Usamos h-auto para respeitar a proporção real da foto
-                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
-                              />
-                            )}
-                          </div>
-                        ))}
+                      {/* ==== GRID LAYOUT CORRIGIDO AQUI ==== */}
+                      {/* columns-x removido. Usando grid puro. overflow-x-hidden adicionado por segurança. */}
+                      <div className="flex-grow overflow-y-auto overflow-x-hidden p-6 bg-slate-50/50">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          {service.portfolio.map((item, i) => (
+                            <div 
+                              key={i} 
+                              // h-fit garante que o container do grid se ajuste à altura da imagem
+                              className="relative rounded-xl overflow-hidden bg-white group/media shadow-sm border border-slate-100 h-fit"
+                            >
+                              {item.type === "video" ? (
+                                <>
+                                  <video
+                                    controls
+                                    preload="none"
+                                    // Mantemos aspect-video para vídeos, pois geralmente são gravados em landscape
+                                    className="w-full h-auto aspect-video object-cover"
+                                  >
+                                    <source src={item.src} type="video/mp4" />
+                                  </video>
+                                  <PlayCircle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-white/80 pointer-events-none group-hover/media:opacity-0 transition-opacity" />
+                                </>
+                              ) : (
+                                <img
+                                  src={item.src}
+                                  alt={item.alt}
+                                  loading="lazy"
+                                  // h-auto e object-contain são a chave para NÃO ter zoom ruim no mobile
+                                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                                />
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </DialogContent>
                   </Dialog>
