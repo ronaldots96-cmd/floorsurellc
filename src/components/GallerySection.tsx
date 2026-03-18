@@ -16,7 +16,8 @@ const GallerySection = () => {
     {
       before: before1,
       after: after1,
-      title: "Hardwood Floor Restoration",
+      // TÍTULO ATUALIZADO AQUI
+      title: "Carpet to Hardwood Replacement", 
       location: "Orlando, FL",
     },
     {
@@ -65,7 +66,7 @@ const GallerySection = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="relative bg-card rounded-2xl overflow-hidden shadow-lg">
+          <div className="relative bg-card rounded-2xl overflow-hidden shadow-lg border border-slate-100">
             {/* Project Info */}
             <div className="absolute top-4 left-4 z-20 bg-charcoal/80 backdrop-blur-sm px-4 py-2 rounded-lg">
               <h3 className="font-display text-lg font-bold text-warm-white">
@@ -102,7 +103,7 @@ const GallerySection = () => {
                 className="absolute top-0 bottom-0 w-1 bg-accent cursor-ew-resize z-10"
                 style={{ left: `${sliderPosition}%` }}
               >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-accent">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-accent rounded-full flex items-center justify-center shadow-accent border-2 border-white">
                   <ChevronLeft className="w-4 h-4 text-accent-foreground" />
                   <ChevronRight className="w-4 h-4 text-accent-foreground" />
                 </div>
@@ -128,12 +129,12 @@ const GallerySection = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between p-4 border-t border-border">
+            <div className="flex items-center justify-between p-4 bg-white">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={prevProject}
-                className="hover:bg-accent/10"
+                className="hover:bg-accent/10 hover:text-accent"
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
@@ -147,7 +148,7 @@ const GallerySection = () => {
                       setSliderPosition(50);
                     }}
                     className={`w-3 h-3 rounded-full transition-colors ${
-                      idx === currentIndex ? "bg-accent" : "bg-border"
+                      idx === currentIndex ? "bg-accent scale-110" : "bg-slate-200"
                     }`}
                   />
                 ))}
@@ -157,7 +158,7 @@ const GallerySection = () => {
                 variant="ghost"
                 size="icon"
                 onClick={nextProject}
-                className="hover:bg-accent/10"
+                className="hover:bg-accent/10 hover:text-accent"
               >
                 <ChevronRight className="w-6 h-6" />
               </Button>
