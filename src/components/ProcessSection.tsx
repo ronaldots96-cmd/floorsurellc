@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MessageSquare, FileText, HardHat, CheckCircle2 } from "lucide-react";
 
+// O import continua aqui em cima!
 import bgPattern from "@/assets/herringbone-wood-flooring-texture.jpg";
 
 const ProcessSection = () => {
@@ -45,23 +46,24 @@ const ProcessSection = () => {
     <section ref={sectionRef} className="relative section-padding overflow-hidden bg-slate-950">
       
       {/* ======================================================== */}
-      {/* BACKGROUND PARALLAX COM VISIBILIDADE CORRIGIDA */}
+      {/* BACKGROUND PARALLAX - SOLUÇÃO DEFINITIVA COM <img /> */}
       {/* ======================================================== */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
         <motion.div 
-          style={{ 
-            y, 
-            backgroundImage: `url(${bgPattern})` 
-          }} 
-          // Retirámos o mix-blend e aumentámos a opacidade para 40%
-          // O top-[-15%] com h-[130%] centraliza a margem de respiro do paralax
-          className="absolute top-[-15%] left-0 w-full h-[130%] bg-cover bg-center opacity-40 z-0"
-          aria-hidden="true"
-        />
+          style={{ y }} 
+          className="absolute top-[-15%] left-0 w-full h-[130%] z-0"
+        >
+          {/* Usar a tag img resolve todos os problemas de caminho e renderização do Vite */}
+          <img 
+            src={bgPattern} 
+            alt="Wood Flooring Texture" 
+            className="w-full h-full object-cover object-center opacity-50" 
+          />
+        </motion.div>
         
-        {/* Gradiente ajustado: 50% de opacidade no meio permite ver perfeitamente a textura da madeira */}
+        {/* Overlay Escuro para leitura */}
         <div 
-          className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950 via-slate-950/50 to-slate-950"
+          className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950 via-slate-950/60 to-slate-950"
           aria-hidden="true"
         />
       </div>
