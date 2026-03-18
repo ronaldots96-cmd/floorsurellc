@@ -50,7 +50,14 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link text-sm font-medium">
+            <a 
+              key={link.href} 
+              href={link.href} 
+              // AJUSTE: Cor branca se !isScrolled, cor padrão se isScrolled
+              className={`nav-link text-sm font-medium transition-colors ${
+                isScrolled ? "text-foreground hover:text-accent" : "text-white hover:text-white/80"
+              }`}
+            >
               {link.label}
             </a>
           ))}
@@ -61,7 +68,10 @@ const Header = () => {
           {/* Phone */}
           <a
             href="tel:+18624480588"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
+            // AJUSTE: Cor do número do telefone também condicional
+            className={`hidden md:flex items-center gap-2 text-sm font-medium transition-colors ${
+              isScrolled ? "text-foreground hover:text-accent" : "text-white hover:text-white/80"
+            }`}
           >
             <Phone className="w-4 h-4 text-accent" />
             <span>(862) 448-0588</span>
@@ -78,7 +88,10 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
+            // AJUSTE: Cor do ícone do menu hamburger (Mobile)
+            className={`lg:hidden p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -100,6 +113,7 @@ const Header = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
+                  // O menu mobile não precisa de condicional isScrolled pois ele sempre terá fundo sólido
                   className="text-lg font-medium text-foreground hover:text-accent transition-colors py-2"
                 >
                   {link.label}
