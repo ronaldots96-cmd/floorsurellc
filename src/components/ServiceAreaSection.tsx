@@ -1,210 +1,87 @@
 import { motion } from "framer-motion";
-import { ArrowRight, PlayCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { MapPin, CheckCircle2 } from "lucide-react";
+// Importando a imagem do mapa que você deve colocar na pasta src/assets/
+import serviceMap from "@/assets/florida-service-map.png"; 
 
-import serviceHardwood from "@/assets/service-hardwood.jpg";
-import serviceVinyl from "@/assets/service-vinyl.jpg";
-import serviceLaminate from "@/assets/service-laminate.jpg";
-import serviceStairs from "@/assets/service-stairs.jpg";
-
-const ServicesSection = () => {
-  const services = [
-    {
-      image: serviceHardwood,
-      title: "Hardwood",
-      description:
-        "Timeless elegance that increases your home's market value. Crafted to last generations.",
-      features: ["Solid Hardwood", "Engineered Wood", "Refinishing"],
-      // Array de mídia do cliente para o Modal deste serviço
-      portfolio: [
-        { type: "image", src: serviceHardwood, alt: "Hardwood project 1" },
-        { type: "video", src: "/assets/hardwood-video.mp4", alt: "Hardwood installation process" },
-        { type: "image", src: "/assets/placeholder.svg", alt: "Hardwood project 2" },
-      ]
-    },
-    {
-      image: serviceVinyl,
-      title: "Vinyl (LVP)",
-      description:
-        "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
-      features: ["LVP (Luxury Vinyl Plank)", "Waterproof", "Easy Installation"],
-      portfolio: [
-        { type: "image", src: serviceVinyl, alt: "Vinyl project 1" },
-        { type: "image", src: "/assets/placeholder.svg", alt: "Vinyl project 2" },
-      ]
-    },
-    {
-      image: serviceLaminate,
-      title: "Laminate",
-      description:
-        "High style, low maintenance. Enjoy the look of real wood without the upkeep.",
-      features: ["Cost-Effective", "Variety of Styles", "Quick Installation"],
-      portfolio: [
-        { type: "image", src: serviceLaminate, alt: "Laminate project 1" },
-      ]
-    },
-    {
-      image: serviceStairs,
-      title: "Stairs & Repairs",
-      description:
-        "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
-      features: ["Wood Stairs", "General Repairs", "Restoration"],
-      portfolio: [
-        { type: "image", src: serviceStairs, alt: "Stairs project 1" },
-        { type: "video", src: "/assets/stairs-video.mp4", alt: "Stairs refinishing" },
-      ]
-    },
+const ServiceAreaSection = () => {
+  const serviceAreas = [
+    "Orlando",
+    "Lakeland",
+    "The Villages",
+    "Clermont",
+    "Kissimmee",
+    "Winter Garden",
+    "Davenport",
+    "Windermere"
   ];
 
   return (
-    <section id="services" className="section-padding bg-background">
+    <section id="service-area" className="section-padding bg-white">
       <div className="container-custom">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-            Our Services
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
-            Complete <span className="text-primary">Flooring</span> Solutions
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            We offer a wide range of flooring installation and repair services, 
-            always with top-quality materials.
-          </p>
-        </motion.div>
-
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card rounded-2xl overflow-hidden shadow-md card-hover flex flex-col"
-            >
-              {/* Image */}
-              <div className="relative h-64 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                <h3 className="absolute bottom-4 left-6 font-display text-2xl font-bold text-warm-white">
-                  {service.title}
-                </h3>
-              </div>
-
-              {/* Content */}
-              <div className="p-6 flex flex-col flex-grow">
-                <p className="text-muted-foreground mb-4">{service.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full font-medium"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-                
-                {/* Spacer para empurrar o botão para baixo */}
-                <div className="mt-auto">
-                  {/* DIALOG / MODAL PARA A GALERIA DO SERVIÇO */}
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        className="text-primary font-semibold hover:text-accent group/btn p-0"
-                      >
-                        View {service.title} Gallery
-                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Button>
-                    </DialogTrigger>
-                    
-                    {/* Conteúdo do Modal */}
-                    <DialogContent className="max-w-4xl bg-white border-slate-200">
-                      <DialogHeader>
-                        <DialogTitle className="font-display text-2xl text-slate-900">
-                          {service.title} Projects
-                        </DialogTitle>
-                        <DialogDescription className="text-slate-500">
-                          Take a look at some of our recent {service.title.toLowerCase()} installations.
-                        </DialogDescription>
-                      </DialogHeader>
-                      
-                      {/* Grid de Mídia (Fotos e Vídeos) dentro do Modal */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 max-h-[60vh] overflow-y-auto p-1">
-                        {service.portfolio.map((item, i) => (
-                          <div key={i} className="relative rounded-xl overflow-hidden bg-slate-100 aspect-video group/media">
-                            {item.type === "video" ? (
-                              <>
-                                <video
-                                  controls
-                                  preload="none"
-                                  className="w-full h-full object-cover"
-                                >
-                                  <source src={item.src} type="video/mp4" />
-                                </video>
-                                <PlayCircle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-white/80 pointer-events-none group-hover/media:opacity-0 transition-opacity" />
-                              </>
-                            ) : (
-                              <img
-                                src={item.src}
-                                alt={item.alt}
-                                loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                              />
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg px-8 h-14"
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Side - Text & Cities */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            <a href="#contact">
-              Request Your Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
-        </motion.div>
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider flex items-center gap-2 mb-4 justify-center lg:justify-start">
+              <MapPin className="w-5 h-5" /> Locally Owned & Operated
+            </span>
+            
+            {/* TÍTULO: Destaque em bloco para garantir contraste máximo */}
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 text-center lg:text-left leading-tight">
+              Serving <span className="inline-block bg-accent text-white px-3 py-1 rounded-xl shadow-md mt-2 md:mt-0">Central Florida</span> with Pride
+            </h2>
+            
+            <p className="text-slate-600 text-lg mb-8 text-center lg:text-left">
+              We bring our showroom to you! Our specialized teams are ready to transform homes and businesses across the region. We guarantee timely arrivals, flawless execution, and total respect for your property.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {serviceAreas.map((city, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                  <span className="text-slate-700 font-medium text-lg">{city}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right Side - Image Map */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50 group"
+          >
+            {/* Container da Imagem */}
+            <div className="absolute inset-0 flex items-center justify-center p-8">
+              <img 
+                src={serviceMap} 
+                alt="Map showing FloorSure LLC service areas in Central Florida" 
+                className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+
+            {/* Selo Flutuante de Status (Estilo "Live") */}
+            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-slate-100 flex items-center gap-3">
+              {/* Ponto Pulsante */}
+              <div className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+              </div>
+              <span className="text-sm font-bold text-slate-800 uppercase tracking-wider">Service Area</span>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 };
 
-export default ServicesSection;
+export default ServiceAreaSection;
