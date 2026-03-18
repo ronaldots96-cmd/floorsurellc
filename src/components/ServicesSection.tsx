@@ -16,7 +16,7 @@ const ServicesSection = () => {
   const services = [
     {
       // 1. CAPA REAL PARA HARDWOOD
-      image: "/portfolio/hardwood/hardwood-1.jpg", 
+      image: "/portfolio/hardwood/hardwood-5.jpg", 
       title: "Hardwood",
       description:
         "Timeless elegance that increases your home's market value. Crafted to last generations.",
@@ -32,7 +32,7 @@ const ServicesSection = () => {
     },
     {
       // 2. CAPA PARA VINYL (Substitua quando tiver a imagem real)
-      image: "/portfolio/vinyl/vinyl-cover.jpg", 
+      image: "/portfolio/vinyl/vinyl-1.jpg", 
       title: "Vinyl (LVP)",
       description:
         "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
@@ -43,7 +43,7 @@ const ServicesSection = () => {
     },
     {
       // Refinishing mantido com capa real
-      image: "/portfolio/refinish/refinish-1.jpg", 
+      image: "/portfolio/refinish/refinish-6.jpg", 
       title: "Refinishing",
       description:
         "Dustless sanding and premium finishes to restore your floor's original glory.",
@@ -59,8 +59,8 @@ const ServicesSection = () => {
     },
     {
       // Stairs mantido com capa real (substituído import por caminho publico)
-      image: "/portfolio/stairs/stairs-1.jpg", 
-      title: "Stairs & Repairs",
+      image: "/portfolio/stairs/stairs-3.jpg", 
+      title: "Stairs",
       description:
         "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
       features: ["Wood Stairs", "General Repairs", "Restoration"],
