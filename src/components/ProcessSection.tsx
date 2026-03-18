@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { MessageSquare, FileText, HardHat, CheckCircle2 } from "lucide-react";
 
-// O import continua aqui em cima!
 import bgPattern from "@/assets/herringbone-wood-flooring-texture.jpg";
 
 const ProcessSection = () => {
@@ -46,24 +45,25 @@ const ProcessSection = () => {
     <section ref={sectionRef} className="relative section-padding overflow-hidden bg-slate-950">
       
       {/* ======================================================== */}
-      {/* BACKGROUND PARALLAX - SOLUÇÃO DEFINITIVA COM <img /> */}
+      {/* BACKGROUND PARALLAX - GRADIENTE SUAVIZADO */}
       {/* ======================================================== */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
         <motion.div 
           style={{ y }} 
           className="absolute top-[-15%] left-0 w-full h-[130%] z-0"
         >
-          {/* Usar a tag img resolve todos os problemas de caminho e renderização do Vite */}
+          {/* Opacidade aumentada para 70% para a madeira ficar mais viva */}
           <img 
             src={bgPattern} 
             alt="Wood Flooring Texture" 
-            className="w-full h-full object-cover object-center opacity-50" 
+            className="w-full h-full object-cover object-center opacity-70" 
           />
         </motion.div>
         
-        {/* Overlay Escuro para leitura */}
+        {/* O segredo está aqui: "via-slate-950/20" quase não tem cor no centro, 
+            deixando a madeira brilhar, mas mantém as pontas escuras */}
         <div 
-          className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950 via-slate-950/60 to-slate-950"
+          className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950 via-slate-950/20 to-slate-950"
           aria-hidden="true"
         />
       </div>
@@ -82,7 +82,7 @@ const ProcessSection = () => {
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2 mb-4 leading-tight">
             How We <span className="text-accent">Work</span>
           </h2>
-          <p className="text-slate-200 text-lg">
+          <p className="text-slate-200 text-lg drop-shadow-md">
             A simple and transparent process from start to finish.
           </p>
         </motion.div>
@@ -120,11 +120,12 @@ const ProcessSection = () => {
                 </div>
 
                 {/* TEXTO */}
-                <div className="ml-6 lg:ml-0 lg:text-center pt-2 lg:pt-0 bg-slate-900/30 lg:bg-transparent p-4 lg:p-0 rounded-2xl backdrop-blur-sm lg:backdrop-blur-none border border-slate-700/30 lg:border-none">
-                  <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-2">
+                <div className="ml-6 lg:ml-0 lg:text-center pt-2 lg:pt-0 bg-slate-900/40 lg:bg-transparent p-4 lg:p-0 rounded-2xl backdrop-blur-sm lg:backdrop-blur-none border border-slate-700/30 lg:border-none">
+                  {/* Adicionado drop-shadow ao texto para garantir legibilidade perfeita contra a madeira */}
+                  <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-2 drop-shadow-md">
                     {step.title}
                   </h3>
-                  <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                  <p className="text-slate-200 text-sm md:text-base leading-relaxed drop-shadow-md font-medium">
                     {step.description}
                   </p>
                 </div>
