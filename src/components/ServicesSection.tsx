@@ -1,140 +1,222 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageSquare, FileText, HardHat, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, PlayCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-// 1. IMPORTAMOS A IMAGEM DIRETAMENTE (Garante que o Vite a encontra!)
-import bgPattern from "@/assets/herringbone-wood-flooring-texture.jpg";
+// Removemos os imports antigos de serviceHardwood e serviceVinyl
 
-const ProcessSection = () => {
-  const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"], 
-  });
-
-  // O paralax vai mover a imagem de 0% até -20% no eixo Y
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-20%"]);
-
-  const steps = [
+const ServicesSection = () => {
+  const services = [
     {
-      icon: MessageSquare,
-      number: "01",
-      title: "Free Consultation",
-      description: "We measure your space and carefully listen to your vision and needs for the project.",
+      // 1. CAPA REAL PARA HARDWOOD
+      image: "/portfolio/hardwood/hardwood-1.jpg", 
+      title: "Hardwood",
+      description:
+        "Timeless elegance that increases your home's market value. Crafted to last generations.",
+      features: ["Solid Hardwood", "Engineered Wood", "Refinishing"],
+      portfolio: [
+        { type: "image", src: "/portfolio/hardwood/hardwood-1.jpg", alt: "Hardwood project 1" },
+        { type: "image", src: "/portfolio/hardwood/hardwood-2.jpg", alt: "Hardwood project 2" },
+        { type: "image", src: "/portfolio/hardwood/hardwood-3.jpg", alt: "Hardwood project 3" },
+        { type: "image", src: "/portfolio/hardwood/hardwood-4.jpg", alt: "Hardwood project 4" },
+        { type: "image", src: "/portfolio/hardwood/hardwood-5.jpg", alt: "Hardwood project 5" },
+        { type: "image", src: "/portfolio/hardwood/hardwood-6.jpg", alt: "Hardwood project 6" },
+      ]
     },
     {
-      icon: FileText,
-      number: "02",
-      title: "No-Surprise Quote",
-      description: "Transparent pricing with absolutely no hidden fees. You know exactly what you'll pay.",
+      // 2. CAPA PARA VINYL (Substitua quando tiver a imagem real)
+      image: "/portfolio/vinyl/vinyl-cover.jpg", 
+      title: "Vinyl (LVP)",
+      description:
+        "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
+      features: ["LVP (Luxury Vinyl Plank)", "Waterproof", "Easy Installation"],
+      portfolio: [
+        { type: "image", src: "/placeholder.svg", alt: "Vinyl project placeholder" },
+      ]
     },
     {
-      icon: HardHat,
-      number: "03",
-      title: "Expert Installation",
-      description: "Clean, professional execution by our specialized local crew respecting your home.",
+      // Refinishing mantido com capa real
+      image: "/portfolio/refinish/refinish-1.jpg", 
+      title: "Refinishing",
+      description:
+        "Dustless sanding and premium finishes to restore your floor's original glory.",
+      features: ["Dustless Sanding", "Custom Staining", "Eco-Friendly Finishes"],
+      portfolio: [
+        { type: "image", src: "/portfolio/refinish/refinish-1.jpg", alt: "Refinishing project 1" },
+        { type: "image", src: "/portfolio/refinish/refinish-2.jpg", alt: "Refinishing project 2" },
+        { type: "image", src: "/portfolio/refinish/refinish-3.jpg", alt: "Refinishing project 3" },
+        { type: "image", src: "/portfolio/refinish/refinish-4.jpg", alt: "Refinishing project 4" },
+        { type: "image", src: "/portfolio/refinish/refinish-5.jpg", alt: "Refinishing project 5" },
+        { type: "image", src: "/portfolio/refinish/refinish-6.jpg", alt: "Refinishing project 6" },
+      ]
     },
     {
-      icon: CheckCircle2,
-      number: "04",
-      title: "Final Walkthrough",
-      description: "We review the completed work together. 100% satisfaction guaranteed before we leave.",
+      // Stairs mantido com capa real (substituído import por caminho publico)
+      image: "/portfolio/stairs/stairs-1.jpg", 
+      title: "Stairs & Repairs",
+      description:
+        "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
+      features: ["Wood Stairs", "General Repairs", "Restoration"],
+      portfolio: [
+        { type: "image", src: "/portfolio/stairs/stairs-1.jpg", alt: "Stairs project 1" },
+        { type: "image", src: "/portfolio/stairs/stairs-2.jpg", alt: "Stairs project 2" },
+        { type: "image", src: "/portfolio/stairs/stairs-3.jpg", alt: "Stairs project 3" },
+        { type: "image", src: "/portfolio/stairs/stairs-4.jpg", alt: "Stairs project 4" },
+        { type: "image", src: "/portfolio/stairs/stairs-5.jpg", alt: "Stairs project 5" },
+        { type: "image", src: "/portfolio/stairs/stairs-6.jpg", alt: "Stairs project 6" },
+      ]
     },
   ];
 
   return (
-    <section ref={sectionRef} className="relative section-padding overflow-hidden bg-slate-950">
-      
-      {/* ======================================================== */}
-      {/* BACKGROUND PARALLAX DINÂMICO CORRIGIDO */}
-      {/* ======================================================== */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.div 
-          style={{ 
-            y, // Efeito de Movimento (Paralax)
-            backgroundImage: `url(${bgPattern})` // Inserção Direta da Imagem
-          }} 
-          // h-[130%] garante que a imagem é maior que a secção para poder "deslizar" sem mostrar fundo vazio
-          className="absolute top-0 left-0 w-full h-[130%] z-0 bg-cover bg-center opacity-30 mix-blend-overlay"
-          aria-hidden="true"
-        />
-        
-        {/* Camada de Gradiente */}
-        <div 
-          className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"
-          aria-hidden="true"
-        />
-      </div>
-
-      <div className="relative z-20 container-custom">
+    <section id="services" className="section-padding bg-background">
+      <div className="container-custom">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider bg-accent/10 px-4 py-1.5 rounded-full inline-block mb-4 border border-accent/20">
-            Our Process
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+            Our Services
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-2 mb-4 leading-tight">
-            How We <span className="text-accent">Work</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+            Complete <span className="text-primary">Flooring</span> Solutions
           </h2>
-          <p className="text-slate-200 text-lg">
-            A simple and transparent process from start to finish.
+          <p className="text-muted-foreground text-lg">
+            We offer a wide range of flooring installation and repair services, 
+            always with top-quality materials.
           </p>
         </motion.div>
 
-        {/* CONNECT THE DOTS LAYOUT */}
-        <div className="relative max-w-5xl mx-auto z-20">
-          
-          {/* LINHAS CONECTORAS */}
-          <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
-          <div className="lg:hidden absolute top-[4rem] bottom-[4rem] left-[2.25rem] w-0.5 bg-gradient-to-b from-accent/10 via-accent/50 to-accent/10 z-0" />
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group bg-card rounded-2xl overflow-hidden shadow-md card-hover flex flex-col"
+            >
+              {/* Image */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
+                <h3 className="absolute bottom-4 left-6 font-display text-2xl font-bold text-warm-white">
+                  {service.title}
+                </h3>
+              </div>
 
-          {/* GRID DOS PASSOS */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6 relative z-10">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative flex flex-row lg:flex-col items-start lg:items-center group"
-              >
-                {/* ÍCONE / BOLINHA DE CONEXÃO */}
-                <div className="relative shrink-0 flex items-center justify-center lg:mb-8 ml-2 lg:ml-0 z-20">
-                  <div className="absolute inset-0 bg-accent/10 rounded-full scale-110 transition-transform duration-500 group-hover:scale-150" />
-                  
-                  <div className="relative w-16 h-16 lg:w-20 lg:h-20 bg-slate-900 border-2 border-slate-700 rounded-full flex items-center justify-center shadow-xl transition-colors duration-300 group-hover:border-accent">
-                    <span className="font-display text-xl lg:text-2xl font-bold text-slate-300 group-hover:text-white transition-colors">
-                      {step.number}
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-grow">
+                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-accent/10 text-accent text-sm rounded-full font-medium"
+                    >
+                      {feature}
                     </span>
-                  </div>
-
-                  <div className="absolute -top-1 -right-1 lg:top-0 lg:right-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110">
-                    <step.icon className="w-4 h-4 text-accent-foreground" />
-                  </div>
+                  ))}
                 </div>
-
-                {/* TEXTO DO PASSO */}
-                <div className="ml-6 lg:ml-0 lg:text-center pt-2 lg:pt-0">
-                  <h3 className="font-display text-xl lg:text-2xl font-bold text-white mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-300 text-sm md:text-base leading-relaxed">
-                    {step.description}
-                  </p>
+                
+                <div className="mt-auto">
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className="text-primary font-semibold hover:text-accent group/btn p-0"
+                      >
+                        View {service.title} Gallery
+                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+                      </Button>
+                    </DialogTrigger>
+                    
+                    <DialogContent className="max-w-4xl bg-white border-slate-200 p-0 overflow-hidden flex flex-col h-[90vh] md:h-auto md:max-h-[90vh]">
+                      <DialogHeader className="p-6 border-b border-slate-100">
+                        <DialogTitle className="font-display text-2xl text-slate-900">
+                          {service.title} Projects
+                        </DialogTitle>
+                        <DialogDescription className="text-slate-500">
+                          Take a look at some of our recent {service.title.toLowerCase()} installations.
+                        </DialogDescription>
+                      </DialogHeader>
+                      
+                      <div className="flex-grow overflow-y-auto overflow-x-hidden p-6 bg-slate-50/50">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          {service.portfolio.map((item, i) => (
+                            <div 
+                              key={i} 
+                              className="relative rounded-xl overflow-hidden bg-white group/media shadow-sm border border-slate-100 h-fit"
+                            >
+                              {item.type === "video" ? (
+                                <>
+                                  <video
+                                    controls
+                                    preload="none"
+                                    className="w-full h-auto aspect-video object-cover"
+                                  >
+                                    <source src={item.src} type="video/mp4" />
+                                  </video>
+                                  <PlayCircle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 text-white/80 pointer-events-none group-hover/media:opacity-0 transition-opacity" />
+                                </>
+                              ) : (
+                                <img
+                                  src={item.src}
+                                  alt={item.alt}
+                                  loading="lazy"
+                                  // H-auto e object-contain garantem que a imagem mostre o cômodo inteiro
+                                  className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
+                                />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent text-lg px-8 h-14"
+          >
+            <a href="#contact">
+              Request Your Quote
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default ProcessSection;
+export default ServicesSection;
