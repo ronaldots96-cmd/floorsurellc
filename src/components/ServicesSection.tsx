@@ -10,14 +10,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import serviceHardwood from "@/assets/service-hardwood.jpg";
-import serviceVinyl from "@/assets/service-vinyl.jpg";
-import serviceStairs from "@/assets/service-stairs.jpg";
+// Removemos os imports antigos de serviceHardwood e serviceVinyl
 
 const ServicesSection = () => {
   const services = [
     {
-      image: serviceHardwood,
+      // 1. CAPA REAL PARA HARDWOOD
+      image: "/portfolio/hardwood/hardwood-1.jpg", 
       title: "Hardwood",
       description:
         "Timeless elegance that increases your home's market value. Crafted to last generations.",
@@ -32,7 +31,8 @@ const ServicesSection = () => {
       ]
     },
     {
-      image: serviceVinyl,
+      // 2. CAPA PARA VINYL (Substitua quando tiver a imagem real)
+      image: "/portfolio/vinyl/vinyl-cover.jpg", 
       title: "Vinyl (LVP)",
       description:
         "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
@@ -42,11 +42,11 @@ const ServicesSection = () => {
       ]
     },
     {
-      // Usando uma das fotos reais do portefólio como capa do cartão
+      // Refinishing mantido com capa real
       image: "/portfolio/refinish/refinish-1.jpg", 
       title: "Refinishing",
       description:
-        "Breathe new life into your existing hardwood floors. Dustless sanding and premium finishes to restore their original glory.",
+        "Dustless sanding and premium finishes to restore your floor's original glory.",
       features: ["Dustless Sanding", "Custom Staining", "Eco-Friendly Finishes"],
       portfolio: [
         { type: "image", src: "/portfolio/refinish/refinish-1.jpg", alt: "Refinishing project 1" },
@@ -58,7 +58,8 @@ const ServicesSection = () => {
       ]
     },
     {
-      image: serviceStairs,
+      // Stairs mantido com capa real (substituído import por caminho publico)
+      image: "/portfolio/stairs/stairs-1.jpg", 
       title: "Stairs & Repairs",
       description:
         "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
@@ -179,6 +180,7 @@ const ServicesSection = () => {
                                   src={item.src}
                                   alt={item.alt}
                                   loading="lazy"
+                                  // H-auto e object-contain garantem que a imagem mostre o cômodo inteiro
                                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                                 />
                               )}
