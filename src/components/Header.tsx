@@ -1,128 +1,118 @@
-// src/components/Header.tsx
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import NavLink from "./NavLink";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About Us" },
-    { href: "#services", label: "Services" },
-    { href: "#gallery", label: "Gallery" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#contact", label: "Contact" },
+    { name: "Services", href: "#services" },
+    { name: "Process", href: "#process" },
+    { name: "Gallery", href: "#gallery" },
+    { name: "FAQ", href: "#faq" },
   ];
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md py-3"
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3" 
           : "bg-transparent py-5"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        
-        {/* Logo Atualizada */}
-        <a href="#home" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+        {/* Logo Section */}
+        <a href="#" className="flex items-center gap-2">
           <img 
             src="/logo-floorsure.png" 
-            alt="FloorSure LLC Logo" 
-            className="h-12 md:h-14 w-auto object-contain mix-blend-multiply" 
-            /* Nota: a classe mix-blend-multiply ajuda se a logo tiver fundo branco e o header for ligeiramente cinza. Se der problema, basta removê-la. */
+            alt="FloorSure LLC" 
+            // Invertemos o logo para branco se não houver scroll, para manter visibilidade
+            className={`h-10 w-auto transition-all duration-300 ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link text-sm font-medium">
-              {link.label}
-            </a>
+            <NavLink 
+              key={link.name} 
+              href={link.href}
+              // Passamos a cor dinâmica: branco antes do scroll, slate-700 depois
+              className={`font-medium transition-colors ${
+                scrolled ? "text-slate-700 hover:text-primary" : "text-white hover:text-accent"
+              }`}
+            >
+              {link.name}
+            </NavLink>
           ))}
+          <Button 
+            className={`rounded-full px-6 transition-all duration-300 ${
+              scrolled 
+                ? "bg-primary text-white hover:bg-primary/90" 
+                : "bg-accent text-slate-900 hover:bg-white"
+            }`}
+          >
+            Get a Quote
+          </Button>
         </nav>
 
-        {/* Right Side Actions */}
-        <div className="flex items-center gap-4">
-          {/* Phone */}
-          <a
-            href="tel:+18624480588"
-            className="hidden md:flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
-          >
-            <Phone className="w-4 h-4 text-accent" />
-            <span>(862) 448-0588</span>
-          </a>
-
-          {/* CTA Button */}
-          <Button
-            asChild
-            className="hidden sm:inline-flex bg-accent text-accent-foreground hover:bg-accent/90 shadow-accent font-semibold"
-          >
-            <a href="#contact">Schedule Estimate</a>
-          </Button>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        {/* Mobile Menu Button */}
+        <button
+          className={`md:hidden p-2 rounded-lg transition-colors ${
+            scrolled ? "text-slate-900" : "text-white"
+          }`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-background border-t border-border"
+            className="md:hidden bg-white border-t border-slate-100 overflow-hidden"
           >
-            <nav className="container-custom py-6 flex flex-col gap-4">
+            <div className="container-custom py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
-                  key={link.href}
+                  key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-accent transition-colors py-2"
+                  className="text-lg font-medium text-slate-900 hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
                 >
-                  {link.label}
+                  {link.name}
                 </a>
               ))}
-              <a
-                href="tel:+18624480588"
-                className="flex items-center gap-2 text-lg font-medium text-accent py-2"
-              >
-                <Phone className="w-5 h-5" />
-                <span>(862) 448-0588</span>
-              </a>
-              <Button
-                asChild
-                className="mt-4 bg-accent text-accent-foreground hover:bg-accent/90 w-full"
-              >
-                <a href="#contact">Schedule Estimate</a>
-              </Button>
-            </nav>
+              <hr className="border-slate-100" />
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-3 text-slate-600">
+                  <Phone size={20} className="text-primary" />
+                  <span className="font-semibold">(862) 448-0588</span>
+                </div>
+                <Button className="w-full bg-primary text-white py-6 text-lg">
+                  Get Free Estimate
+                </Button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 };
 
