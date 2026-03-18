@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
 
-        {/* Botão para Google Reviews (Opcional, mas dá muita autoridade) */}
+        {/* Botão para Google Reviews com o Link Real */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,11 +99,17 @@ const TestimonialsSection = () => {
           className="text-center mt-12"
         >
           <Button
+            asChild
             variant="outline"
             className="border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold rounded-full px-6"
           >
-            {/* O ícone do Google pode ser adicionado depois se preferir, usei um texto direto por agora */}
-            Read more reviews on Google
+            <a 
+              href="https://www.google.com/search?sca_esv=339a86c33fa5a652&sxsrf=ANbL-n57pf66pvL3acAjdvzCaDtrlfgHsQ:1773809089052&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcjrxX52LANKSfd-qRsnqNj53t-yapb1RlssMkaW9PNQ3-H1CQXS_KagiNEbsvERqvIgy5FcgPQKDW-kpLQnUd-P9qLsVA__jtbTxUME1D6dAzV87w%3D%3D&q=FloorSure+Flooring+LLC+Reviews&sa=X&ved=2ahUKEwiQzZvl0aiTAxUID1kFHU8HONMQ0bkNegQIIhAF" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Read more reviews on Google
+            </a>
           </Button>
         </motion.div>
 
