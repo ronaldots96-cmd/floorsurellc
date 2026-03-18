@@ -24,13 +24,13 @@ const ServicesSection = () => {
         "Timeless elegance that increases your home's market value. Crafted to last generations.",
       features: ["Solid Hardwood", "Engineered Wood", "Refinishing"],
       portfolio: [
+        { type: "video", src: "/portfolio/hardwood/hardwood-video-1.mp4", alt: "Hardwood installation video" },
         { type: "image", src: "/portfolio/hardwood/hardwood-1.jpg", alt: "Hardwood project 1" },
         { type: "image", src: "/portfolio/hardwood/hardwood-2.jpg", alt: "Hardwood project 2" },
         { type: "image", src: "/portfolio/hardwood/hardwood-3.jpg", alt: "Hardwood project 3" },
         { type: "image", src: "/portfolio/hardwood/hardwood-4.jpg", alt: "Hardwood project 4" },
         { type: "image", src: "/portfolio/hardwood/hardwood-5.jpg", alt: "Hardwood project 5" },
         { type: "image", src: "/portfolio/hardwood/hardwood-6.jpg", alt: "Hardwood project 6" },
-       { type: "video", src: "/portfolio/hardwood/NOME_DO_SEU_VIDEO.mp4", alt: "Hardwood installation video" },
       ]
     },
     {
