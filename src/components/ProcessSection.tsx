@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
 import { MessageSquare, FileText, HardHat, CheckCircle2 } from "lucide-react";
-// Opcional: Se quiser usar uma foto real como parallax, importe-a aqui. 
-// Caso não tenha agora, a secção já usa um padrão de bolinhas incrível (dot grid).
-// import processBg from "@/assets/process-bg.jpg"; 
 
 const ProcessSection = () => {
   const steps = [
@@ -36,16 +33,13 @@ const ProcessSection = () => {
     <section className="relative section-padding overflow-hidden">
       {/* BACKGROUND PARALLAX & TEXTURA */}
       <div className="absolute inset-0 z-0 bg-slate-900">
-        {/* Descomente a linha abaixo e o import se quiser usar uma foto de fundo */}
-        {/* <div className="absolute inset-0 bg-[url('@/assets/process-bg.jpg')] bg-cover bg-fixed bg-center opacity-20 mix-blend-overlay" /> */}
-        
         {/* Padrão de pontos (Dot Grid) - Estética muito usada em Marketing/Tech */}
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900" />
       </div>
 
       <div className="relative z-10 container-custom">
-        {/* Header - Texto atualizado para branco devido ao fundo escuro */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,10 +60,10 @@ const ProcessSection = () => {
         {/* CONNECT THE DOTS LAYOUT */}
         <div className="relative max-w-5xl mx-auto">
           
-          {/* LINHA CONECTORA (Desktop) - Fica invisível no mobile */}
+          {/* LINHA CONECTORA (Desktop) */}
           <div className="hidden lg:block absolute top-[4.5rem] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
           
-          {/* LINHA CONECTORA (Mobile) - Fica invisível no Desktop */}
+          {/* LINHA CONECTORA (Mobile) */}
           <div className="lg:hidden absolute top-[4rem] bottom-[4rem] left-[2.25rem] w-0.5 bg-gradient-to-b from-accent/10 via-accent/50 to-accent/10 z-0" />
 
           {/* GRID DOS PASSOS */}
@@ -85,7 +79,7 @@ const ProcessSection = () => {
               >
                 {/* O CONJUNTO DO ÍCONE (A BOLINHA DA CONEXÃO) */}
                 <div className="relative shrink-0 flex items-center justify-center lg:mb-8 ml-2 lg:ml-0 z-20">
-                  {/* Fundo do número (Fica por trás e cresce no hover) */}
+                  {/* Fundo do número */}
                   <div className="absolute inset-0 bg-accent/10 rounded-full scale-110 transition-transform duration-500 group-hover:scale-150" />
                   
                   {/* Círculo Principal com o Número */}
