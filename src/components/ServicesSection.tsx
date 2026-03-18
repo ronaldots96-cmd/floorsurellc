@@ -12,7 +12,6 @@ import {
 
 import serviceHardwood from "@/assets/service-hardwood.jpg";
 import serviceVinyl from "@/assets/service-vinyl.jpg";
-import serviceLaminate from "@/assets/service-laminate.jpg";
 import serviceStairs from "@/assets/service-stairs.jpg";
 
 const ServicesSection = () => {
@@ -30,7 +29,6 @@ const ServicesSection = () => {
         { type: "image", src: "/portfolio/hardwood/hardwood-4.jpg", alt: "Hardwood project 4" },
         { type: "image", src: "/portfolio/hardwood/hardwood-5.jpg", alt: "Hardwood project 5" },
         { type: "image", src: "/portfolio/hardwood/hardwood-6.jpg", alt: "Hardwood project 6" },
-        { type: "video", src: "/portfolio/hardwood/hardwood-video-1.mp4", alt: "Hardwood installation video" },
       ]
     },
     {
@@ -44,13 +42,19 @@ const ServicesSection = () => {
       ]
     },
     {
-      image: serviceLaminate,
-      title: "Laminate",
+      // Usando uma das fotos reais do portefólio como capa do cartão
+      image: "/portfolio/refinish/refinish-1.jpg", 
+      title: "Refinishing",
       description:
-        "High style, low maintenance. Enjoy the look of real wood without the upkeep.",
-      features: ["Cost-Effective", "Variety of Styles", "Quick Installation"],
+        "Breathe new life into your existing hardwood floors. Dustless sanding and premium finishes to restore their original glory.",
+      features: ["Dustless Sanding", "Custom Staining", "Eco-Friendly Finishes"],
       portfolio: [
-        { type: "image", src: "/placeholder.svg", alt: "Laminate project placeholder" },
+        { type: "image", src: "/portfolio/refinish/refinish-1.jpg", alt: "Refinishing project 1" },
+        { type: "image", src: "/portfolio/refinish/refinish-2.jpg", alt: "Refinishing project 2" },
+        { type: "image", src: "/portfolio/refinish/refinish-3.jpg", alt: "Refinishing project 3" },
+        { type: "image", src: "/portfolio/refinish/refinish-4.jpg", alt: "Refinishing project 4" },
+        { type: "image", src: "/portfolio/refinish/refinish-5.jpg", alt: "Refinishing project 5" },
+        { type: "image", src: "/portfolio/refinish/refinish-6.jpg", alt: "Refinishing project 6" },
       ]
     },
     {
@@ -60,7 +64,12 @@ const ServicesSection = () => {
         "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
       features: ["Wood Stairs", "General Repairs", "Restoration"],
       portfolio: [
-        { type: "image", src: "/placeholder.svg", alt: "Stairs project placeholder" },
+        { type: "image", src: "/portfolio/stairs/stairs-1.jpg", alt: "Stairs project 1" },
+        { type: "image", src: "/portfolio/stairs/stairs-2.jpg", alt: "Stairs project 2" },
+        { type: "image", src: "/portfolio/stairs/stairs-3.jpg", alt: "Stairs project 3" },
+        { type: "image", src: "/portfolio/stairs/stairs-4.jpg", alt: "Stairs project 4" },
+        { type: "image", src: "/portfolio/stairs/stairs-5.jpg", alt: "Stairs project 5" },
+        { type: "image", src: "/portfolio/stairs/stairs-6.jpg", alt: "Stairs project 6" },
       ]
     },
   ];
@@ -137,7 +146,6 @@ const ServicesSection = () => {
                       </Button>
                     </DialogTrigger>
                     
-                    {/* Ajuste no DialogContent para garantir scroll vertical limpo */}
                     <DialogContent className="max-w-4xl bg-white border-slate-200 p-0 overflow-hidden flex flex-col h-[90vh] md:h-auto md:max-h-[90vh]">
                       <DialogHeader className="p-6 border-b border-slate-100">
                         <DialogTitle className="font-display text-2xl text-slate-900">
@@ -148,14 +156,11 @@ const ServicesSection = () => {
                         </DialogDescription>
                       </DialogHeader>
                       
-                      {/* ==== GRID LAYOUT CORRIGIDO AQUI ==== */}
-                      {/* columns-x removido. Usando grid puro. overflow-x-hidden adicionado por segurança. */}
                       <div className="flex-grow overflow-y-auto overflow-x-hidden p-6 bg-slate-50/50">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                           {service.portfolio.map((item, i) => (
                             <div 
                               key={i} 
-                              // h-fit garante que o container do grid se ajuste à altura da imagem
                               className="relative rounded-xl overflow-hidden bg-white group/media shadow-sm border border-slate-100 h-fit"
                             >
                               {item.type === "video" ? (
@@ -163,7 +168,6 @@ const ServicesSection = () => {
                                   <video
                                     controls
                                     preload="none"
-                                    // Mantemos aspect-video para vídeos, pois geralmente são gravados em landscape
                                     className="w-full h-auto aspect-video object-cover"
                                   >
                                     <source src={item.src} type="video/mp4" />
@@ -175,7 +179,6 @@ const ServicesSection = () => {
                                   src={item.src}
                                   alt={item.alt}
                                   loading="lazy"
-                                  // h-auto e object-contain são a chave para NÃO ter zoom ruim no mobile
                                   className="w-full h-auto object-contain hover:scale-105 transition-transform duration-500"
                                 />
                               )}
