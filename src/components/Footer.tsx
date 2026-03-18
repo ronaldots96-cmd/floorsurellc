@@ -25,23 +25,11 @@ const Footer = () => {
               We deliver craftsmanship you can stand on, backed by total transparency and local expertise.
             </p>
             <div className="flex space-x-4">
-              {/* LINK DO FACEBOOK ATUALIZADO */}
-              <a 
-                href="https://www.facebook.com/floorsurellc" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-slate-900 transition-colors border border-slate-800 hover:border-accent"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-slate-900 transition-colors border border-slate-800 hover:border-accent">
                 <Facebook className="w-5 h-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              {/* LINK DO INSTAGRAM ATUALIZADO */}
-              <a 
-                href="https://www.instagram.com/floorsurellc/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-slate-900 transition-colors border border-slate-800 hover:border-accent"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-slate-900 transition-colors border border-slate-800 hover:border-accent">
                 <Instagram className="w-5 h-5" />
                 <span className="sr-only">Instagram</span>
               </a>
@@ -85,9 +73,8 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400 text-sm">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                {/* Também corrigi o link de telefone aqui para bater certo com o texto! */}
-                <a href="tel:+18624480588" className="hover:text-white transition-colors">
-                  (862) 448-0588
+                <a href="tel:+14075550198" className="hover:text-white transition-colors">
+                  (407) 555-0198
                 </a>
               </li>
               <li className="flex items-start gap-3 text-slate-400 text-sm">
@@ -99,14 +86,14 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-slate-400 text-sm">
                 <MapPin className="w-5 h-5 text-accent shrink-0" />
                 <span>
-                  Davenport, FL <br />
+                  Orlando, FL <br />
                   <span className="text-slate-500">Serving Central Florida</span>
                 </span>
               </li>
               <li className="flex items-start gap-3 text-slate-400 text-sm">
                 <Clock className="w-5 h-5 text-accent shrink-0" />
                 <span>
-                  Mon - Fri: 8:00 AM - 8:00 PM <br />
+                  Mon - Fri: 8:00 AM - 6:00 PM <br />
                   <span className="text-slate-500">Sat: By Appointment</span>
                 </span>
               </li>
