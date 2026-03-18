@@ -6,30 +6,30 @@ const ProcessSection = () => {
     {
       icon: MessageSquare,
       number: "01",
-      title: "Consultation",
+      title: "Free Consultation",
       description:
-        "Contact us to discuss your needs and schedule a free on-site evaluation.",
+        "We measure your space and carefully listen to your vision and needs for the project.",
     },
     {
       icon: FileText,
       number: "02",
-      title: "Quote",
+      title: "No-Surprise Quote",
       description:
-        "We assess your space and prepare a detailed, transparent quote with no surprises.",
+        "Transparent pricing with absolutely no hidden fees. You know exactly what you'll pay.",
     },
     {
       icon: HardHat,
       number: "03",
-      title: "Installation",
+      title: "Expert Installation",
       description:
-        "Our professional team performs the installation with precision, cleanliness, and on schedule.",
+        "Clean, professional execution by our specialized local crew respecting your home.",
     },
     {
       icon: CheckCircle2,
       number: "04",
-      title: "Final Inspection",
+      title: "Final Walkthrough",
       description:
-        "We conduct a complete inspection together to ensure your total satisfaction with the result.",
+        "We review the completed work together. 100% satisfaction guaranteed before we leave.",
     },
   ];
 
