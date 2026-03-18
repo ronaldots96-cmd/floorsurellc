@@ -28,7 +28,8 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-slate-50">
+    // AJUSTE: Alterado de bg-slate-50 para bg-secondary
+    <section id="testimonials" className="section-padding bg-secondary">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -101,6 +102,7 @@ const TestimonialsSection = () => {
           <Button
             asChild
             variant="outline"
+            // Opcional: Se quiser dar mais destaque ao botão nesse novo fundo, podemos ajustar essas cores no futuro.
             className="border-slate-200 text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-semibold rounded-full px-6"
           >
             <a 
