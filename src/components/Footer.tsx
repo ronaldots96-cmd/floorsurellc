@@ -5,20 +5,22 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-950 pt-16 pb-8 border-t-[6px] border-accent">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-12">
+      {/* Adicionado px-6 sm:px-8 para forçar a margem no mobile */}
+      <div className="container-custom px-6 sm:px-8">
+        
+        {/* Grid ajustado para 12 colunas no Desktop para equilibrar os espaçamentos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
-          {/* Coluna 1: Marca e Sobre */}
-          <div className="flex flex-col">
+          {/* Coluna 1: Marca e Sobre (Ocupa 4 das 12 colunas) */}
+          <div className="flex flex-col lg:col-span-4">
             <a href="#" className="mb-6 inline-block">
-              {/* O logo puxado diretamente da pasta public */}
               <img 
                 src="/logo-floorsure.png" 
                 alt="FloorSure LLC Logo" 
                 className="h-12 w-auto object-contain"
               />
             </a>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-sm">
               Premium flooring installation and restoration services across Central Florida. 
               We deliver craftsmanship you can stand on, backed by total transparency and local expertise.
             </p>
@@ -34,8 +36,8 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Quick Links */}
-          <div>
+          {/* Coluna 2: Quick Links (Ocupa 2 das 12 colunas e centraliza a si mesma) */}
+          <div className="lg:col-span-2 lg:justify-self-center">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
               Quick Links
@@ -48,8 +50,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Coluna 3: Serviços (Ótimo para SEO) */}
-          <div>
+          {/* Coluna 3: Serviços (Ocupa 3 das 12 colunas e centraliza a si mesma) */}
+          <div className="lg:col-span-3 lg:justify-self-center">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
               Our Services
@@ -62,8 +64,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Coluna 4: Contactos */}
-          <div>
+          {/* Coluna 4: Contactos (Ocupa 3 das 12 colunas) */}
+          <div className="lg:col-span-3">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
               Contact Us
