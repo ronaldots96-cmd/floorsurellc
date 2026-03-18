@@ -30,6 +30,7 @@ const ServicesSection = () => {
         { type: "image", src: "/portfolio/hardwood/hardwood-4.jpg", alt: "Hardwood project 4" },
         { type: "image", src: "/portfolio/hardwood/hardwood-5.jpg", alt: "Hardwood project 5" },
         { type: "image", src: "/portfolio/hardwood/hardwood-6.jpg", alt: "Hardwood project 6" },
+       { type: "video", src: "/portfolio/hardwood/NOME_DO_SEU_VIDEO.mp4", alt: "Hardwood installation video" },
       ]
     },
     {
