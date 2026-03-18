@@ -10,7 +10,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-// Imagens estruturais (Capas dos cartões) mantidas na src/assets/
 import serviceHardwood from "@/assets/service-hardwood.jpg";
 import serviceVinyl from "@/assets/service-vinyl.jpg";
 import serviceLaminate from "@/assets/service-laminate.jpg";
@@ -24,7 +23,6 @@ const ServicesSection = () => {
       description:
         "Timeless elegance that increases your home's market value. Crafted to last generations.",
       features: ["Solid Hardwood", "Engineered Wood", "Refinishing"],
-      // Galeria real apontando para a pasta public/portfolio/hardwood/
       portfolio: [
         { type: "image", src: "/portfolio/hardwood/hardwood-1.jpg", alt: "Hardwood project 1" },
         { type: "image", src: "/portfolio/hardwood/hardwood-2.jpg", alt: "Hardwood project 2" },
@@ -40,7 +38,6 @@ const ServicesSection = () => {
       description:
         "100% waterproof and life-proof. The perfect choice for active Florida families and pets.",
       features: ["LVP (Luxury Vinyl Plank)", "Waterproof", "Easy Installation"],
-      // Estrutura pronta para quando subir as imagens de Vinyl
       portfolio: [
         { type: "image", src: "/placeholder.svg", alt: "Vinyl project placeholder" },
       ]
@@ -51,7 +48,6 @@ const ServicesSection = () => {
       description:
         "High style, low maintenance. Enjoy the look of real wood without the upkeep.",
       features: ["Cost-Effective", "Variety of Styles", "Quick Installation"],
-      // Estrutura pronta para quando subir as imagens de Laminate
       portfolio: [
         { type: "image", src: "/placeholder.svg", alt: "Laminate project placeholder" },
       ]
@@ -62,7 +58,6 @@ const ServicesSection = () => {
       description:
         "Specialized stair restoration and precise repairs to bring your existing floors back to life.",
       features: ["Wood Stairs", "General Repairs", "Restoration"],
-      // Estrutura pronta para quando subir as imagens de Stairs
       portfolio: [
         { type: "image", src: "/placeholder.svg", alt: "Stairs project placeholder" },
       ]
@@ -129,9 +124,7 @@ const ServicesSection = () => {
                   ))}
                 </div>
                 
-                {/* Spacer para empurrar o botão para baixo */}
                 <div className="mt-auto">
-                  {/* DIALOG / MODAL PARA A GALERIA DO SERVIÇO */}
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button
@@ -143,7 +136,6 @@ const ServicesSection = () => {
                       </Button>
                     </DialogTrigger>
                     
-                    {/* Conteúdo do Modal */}
                     <DialogContent className="max-w-4xl bg-white border-slate-200">
                       <DialogHeader>
                         <DialogTitle className="font-display text-2xl text-slate-900">
@@ -154,16 +146,20 @@ const ServicesSection = () => {
                         </DialogDescription>
                       </DialogHeader>
                       
-                      {/* Grid de Mídia (Fotos e Vídeos) dentro do Modal */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 max-h-[60vh] overflow-y-auto p-1">
+                      {/* ==== MASONRY LAYOUT ATUALIZADO AQUI ==== */}
+                      <div className="columns-1 sm:columns-2 gap-6 mt-6 max-h-[75vh] overflow-y-auto p-2 pr-4">
                         {service.portfolio.map((item, i) => (
-                          <div key={i} className="relative rounded-xl overflow-hidden bg-slate-100 aspect-video group/media">
+                          <div 
+                            key={i} 
+                            // O break-inside-avoid impede que a imagem seja "cortada" ao meio entre as colunas
+                            className="break-inside-avoid relative rounded-xl overflow-hidden bg-slate-100 group/media mb-6 shadow-sm border border-slate-100"
+                          >
                             {item.type === "video" ? (
                               <>
                                 <video
                                   controls
                                   preload="none"
-                                  className="w-full h-full object-cover"
+                                  className="w-full h-auto aspect-video object-cover"
                                 >
                                   <source src={item.src} type="video/mp4" />
                                 </video>
@@ -174,7 +170,8 @@ const ServicesSection = () => {
                                 src={item.src}
                                 alt={item.alt}
                                 loading="lazy"
-                                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                // Usamos h-auto para respeitar a proporção real da foto
+                                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
                               />
                             )}
                           </div>
