@@ -16,6 +16,13 @@ import before1 from "@/assets/before-1.jpg";
 import after1 from "@/assets/after-1.jpg";
 import before2 from "@/assets/before-2.jpg";
 import after2 from "@/assets/after-2.jpg";
+// NOVOS IMPORTS ADICIONADOS AQUI
+import before3 from "@/assets/before-3.jpg";
+import after3 from "@/assets/after-3.jpg";
+import before4 from "@/assets/before-4.jpg";
+import after4 from "@/assets/after-4.jpg";
+import before5 from "@/assets/before-5.jpg";
+import after5 from "@/assets/after-5.jpg";
 
 const GallerySection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,6 +40,25 @@ const GallerySection = () => {
       after: after2,
       title: "Carpet to Vinyl",
       location: "Tampa, FL",
+    },
+    // NOVOS PROJETOS ADICIONADOS AQUI
+    {
+      before: before3,
+      after: after3,
+      title: "Hardwood Restoration", // Pode alterar os títulos e localizações depois
+      location: "Winter Garden, FL",
+    },
+    {
+      before: before4,
+      after: after4,
+      title: "Luxury Vinyl Plank", 
+      location: "Kissimmee, FL",
+    },
+    {
+      before: before5,
+      after: after5,
+      title: "Staircase Renovation",
+      location: "Lakeland, FL",
     },
   ];
 
@@ -89,9 +115,7 @@ const GallerySection = () => {
           <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200">
             
             {/* INFORMAÇÃO DO PROJETO (CAIXA DE TEXTO AJUSTADA) */}
-            {/* px-3 py-1.5 no mobile para ficar pequena, px-4 py-2 no desktop */}
             <div className="absolute top-3 left-3 md:top-5 md:left-5 z-20 bg-slate-900/85 backdrop-blur-md px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg shadow-lg border border-white/10 max-w-[80%]">
-              {/* whitespace-nowrap impede a quebra de linha em ecrãs pequenos */}
               <h3 className="font-display text-sm md:text-lg font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">
                 {projects[currentIndex].title}
               </h3>
@@ -101,7 +125,6 @@ const GallerySection = () => {
             </div>
 
             {/* CONTAINER DA IMAGEM (ALTURA AJUSTADA) */}
-            {/* aspect-[4/5] = Retrato vertical no Mobile | md:aspect-[16/10] = Cinema no Desktop */}
             <div className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden group">
               {/* After Image (Bottom Layer) */}
               <img
