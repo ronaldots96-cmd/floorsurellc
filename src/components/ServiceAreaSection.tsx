@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { MapPin, CheckCircle2 } from "lucide-react";
-// Importando a imagem do mapa que você deve colocar na pasta src/assets/
-import serviceMap from "@/assets/florida-service-map.png"; 
 
 const ServiceAreaSection = () => {
   const serviceAreas = [
@@ -10,9 +8,7 @@ const ServiceAreaSection = () => {
     "The Villages",
     "Clermont",
     "Kissimmee",
-    "Winter Garden",
-    "Davenport",
-    "Windermere"
+    "Winter Garden"
   ];
 
   return (
@@ -50,7 +46,7 @@ const ServiceAreaSection = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Image Map */}
+          {/* Right Side - Google Map Iframe */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,17 +54,22 @@ const ServiceAreaSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50 group"
           >
-            {/* Container da Imagem */}
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <img 
-                src={serviceMap} 
-                alt="Map showing FloorSure LLC service areas in Central Florida" 
-                className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-105"
-              />
+            {/* Container do Mapa (Iframe) */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617922.949122781!2d-82.5632020976853!3d27.682442198467623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88dd10249a5fd6bd%3A0x1c8ca282e17f348d!2zRmzDs3JpZGEgQ2VudHJhbCwgRmzDs3JpZGEsIEVVQQ!5e0!3m2!1spt-BR!2sbr!4v1774491469402!5m2!1spt-BR!2sbr" 
+                className="w-full h-full" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Service Area Map"
+              ></iframe>
             </div>
 
             {/* Selo Flutuante de Status (Estilo "Live") */}
-            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-slate-100 flex items-center gap-3">
+            {/* Adicionada a classe pointer-events-none para não bloquear a interação com o mapa por baixo */}
+            <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-full shadow-lg border border-slate-100 flex items-center gap-3 pointer-events-none">
               {/* Ponto Pulsante */}
               <div className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
