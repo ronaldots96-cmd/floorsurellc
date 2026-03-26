@@ -5,13 +5,9 @@ const Footer = () => {
 
   return (
     <footer className="bg-slate-950 pt-16 pb-8 border-t-[6px] border-accent">
-      {/* Adicionado px-6 sm:px-8 para forçar a margem no mobile */}
       <div className="container-custom px-6 sm:px-8">
-        
-        {/* Grid ajustado para 12 colunas no Desktop para equilibrar os espaçamentos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-12">
           
-          {/* Coluna 1: Marca e Sobre (Ocupa 4 das 12 colunas) */}
           <div className="flex flex-col lg:col-span-4">
             <a href="#" className="mb-6 inline-block">
               <img 
@@ -25,7 +21,6 @@ const Footer = () => {
               We deliver craftsmanship you can stand on, backed by total transparency and local expertise.
             </p>
             <div className="flex space-x-4">
-              {/* LINK DO FACEBOOK ATUALIZADO */}
               <a 
                 href="https://www.facebook.com/floorsurellc" 
                 target="_blank"
@@ -35,7 +30,6 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
                 <span className="sr-only">Facebook</span>
               </a>
-              {/* LINK DO INSTAGRAM ATUALIZADO */}
               <a 
                 href="https://www.instagram.com/floorsurellc/" 
                 target="_blank"
@@ -48,7 +42,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Coluna 2: Quick Links (Ocupa 2 das 12 colunas e centraliza a si mesma) */}
           <div className="lg:col-span-2 lg:justify-self-center">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
@@ -62,7 +55,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Coluna 3: Serviços (Ocupa 3 das 12 colunas e centraliza a si mesma) */}
           <div className="lg:col-span-3 lg:justify-self-center">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
@@ -76,7 +68,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Coluna 4: Contactos (Ocupa 3 das 12 colunas) */}
           <div className="lg:col-span-3">
             <h4 className="text-white font-display font-bold text-lg mb-6 flex items-center gap-2">
               <span className="w-2 h-2 bg-accent rounded-full" />
@@ -85,7 +76,6 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400 text-sm">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                {/* Também corrigi o link de telefone aqui para bater certo com o texto! */}
                 <a href="tel:+18624480588" className="hover:text-white transition-colors">
                   (862) 448-0588
                 </a>
@@ -112,7 +102,6 @@ const Footer = () => {
 
         </div>
 
-        {/* Linha de Fundo (Copyright) */}
         <div className="pt-8 border-t border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm text-center md:text-left">
             &copy; {currentYear} FloorSure LLC. All rights reserved.
