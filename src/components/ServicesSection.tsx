@@ -43,8 +43,6 @@ const ServicesSection = () => {
         { type: "image", src: "/portfolio/vinyl/vinyl-3.jpg", alt: "Vinyl project 3" },
         { type: "image", src: "/portfolio/vinyl/vinyl-4.jpg", alt: "Vinyl project 4" },
         { type: "image", src: "/portfolio/vinyl/vinyl-5.jpg", alt: "Vinyl project 5" },
-        { type: "image", src: "/portfolio/vinyl/vinyl-6.jpg", alt: "Vinyl project 6" },
-        { type: "image", src: "/portfolio/vinyl/vinyl-7.jpg", alt: "Vinyl project 7" },
         { type: "image", src: "/portfolio/vinyl/vinyl-8.jpg", alt: "Vinyl project 8" },
       ]
     },
