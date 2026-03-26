@@ -53,7 +53,7 @@ const ServiceAreaSection = () => {
           >
             <div className="absolute inset-0 flex items-center justify-center">
               <iframe 
-                src="https://maps.google.com/maps?q=Central%20Florida&t=&z=9&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=Central%20Florida&t=&z=8&ie=UTF8&iwloc=&output=embed" 
                 className="w-full h-full" 
                 style={{ border: 0 }} 
                 allowFullScreen={true} 
