@@ -19,8 +19,8 @@ import after2 from "@/assets/after-2.jpg";
 // NOVOS IMPORTS ADICIONADOS AQUI
 import before3 from "@/assets/before-3.jpg";
 import after3 from "@/assets/after-3.jpg";
-import before4 from "@/assets/before-4.jpg";
-import after4 from "@/assets/after-4.jpg";
+import before4 from "@/assets/before-4.jpeg";
+import after4 from "@/assets/after-4.jpeg";
 import before5 from "@/assets/before-5.jpg";
 import after5 from "@/assets/after-5.jpg";
 
