@@ -38,26 +38,26 @@ const GallerySection = () => {
     {
       before: before2,
       after: after2,
-      title: "Carpet to Vinyl",
+      title: "Sanding and Refinishing",
       location: "Tampa, FL",
     },
     // NOVOS PROJETOS ADICIONADOS AQUI
     {
       before: before3,
       after: after3,
-      title: "Hardwood Restoration", // Pode alterar os títulos e localizações depois
+      title: "Carpet to Vinyl", // Pode alterar os títulos e localizações depois
       location: "Winter Garden, FL",
     },
     {
       before: before4,
       after: after4,
-      title: "Luxury Vinyl Plank", 
+      title: "Carpet to Hardwood", 
       location: "Kissimmee, FL",
     },
     {
       before: before5,
       after: after5,
-      title: "Staircase Renovation",
+      title: "Carpet to Vinyl",
       location: "Lakeland, FL",
     },
   ];
