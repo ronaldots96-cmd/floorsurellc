@@ -190,3 +190,12 @@
     to { opacity: 1; transform: translateX(0); }
   }
 }
+/* Remover o selo Edit with Lovable */
+#lovable-badge, 
+[id*="lovable-badge"], 
+[class*="lovable-badge"] { 
+  display: none !important; 
+  pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
